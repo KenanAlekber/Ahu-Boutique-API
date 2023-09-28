@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "upX8AqvTPXRB/2c0wMXVrax/pUJMgPOlgKIOebDmnRM=",
+  "Source": "Ahu.API",
+  "BasePath": "_content/Ahu.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

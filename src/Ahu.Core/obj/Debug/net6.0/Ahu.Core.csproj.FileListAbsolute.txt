@@ -1,0 +1,12 @@
+C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\bin\Debug\net6.0\Ahu.Core.deps.json
+C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\bin\Debug\net6.0\Ahu.Core.dll
+C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\bin\Debug\net6.0\Ahu.Core.pdb
+C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\Ahu.Core.csproj.AssemblyReference.cache
+C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\Ahu.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\Ahu.Core.AssemblyInfoInputs.cache
+C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\Ahu.Core.AssemblyInfo.cs
+C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\Ahu.Core.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\Ahu.Core.dll
+C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\refint\Ahu.Core.dll
+C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\Ahu.Core.pdb
+C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\ref\Ahu.Core.dll
