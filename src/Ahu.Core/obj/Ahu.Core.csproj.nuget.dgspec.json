@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj": {}
+    "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj": {
+    "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj",
         "projectName": "Ahu.Core",
-        "projectPath": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Core\\obj\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,18 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.22, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

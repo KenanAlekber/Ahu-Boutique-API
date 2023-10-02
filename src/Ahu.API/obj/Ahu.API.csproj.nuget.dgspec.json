@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.API\\Ahu.API.csproj": {}
+    "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\Ahu.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.API\\Ahu.API.csproj": {
+    "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\Ahu.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.API\\Ahu.API.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\Ahu.API.csproj",
         "projectName": "Ahu.API",
-        "projectPath": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.API\\Ahu.API.csproj",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\Ahu.API.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.API\\obj\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Business\\Ahu.Business.csproj": {
-                "projectPath": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Business\\Ahu.Business.csproj"
+              "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Business\\Ahu.Business.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Business\\Ahu.Business.csproj"
               }
             }
           }
@@ -49,6 +49,12 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.22, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -77,14 +83,14 @@
         }
       }
     },
-    "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Business\\Ahu.Business.csproj": {
+    "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Business\\Ahu.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Business\\Ahu.Business.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Business\\Ahu.Business.csproj",
         "projectName": "Ahu.Business",
-        "projectPath": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Business\\Ahu.Business.csproj",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Business\\Ahu.Business.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Business\\obj\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -105,8 +111,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.DataAccess\\Ahu.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.DataAccess\\Ahu.DataAccess.csproj"
+              "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.DataAccess\\Ahu.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.DataAccess\\Ahu.DataAccess.csproj"
               }
             }
           }
@@ -146,14 +152,14 @@
         }
       }
     },
-    "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj": {
+    "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj",
         "projectName": "Ahu.Core",
-        "projectPath": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Core\\obj\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -185,6 +191,18 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.22, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -205,14 +223,14 @@
         }
       }
     },
-    "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.DataAccess\\Ahu.DataAccess.csproj": {
+    "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.DataAccess\\Ahu.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.DataAccess\\Ahu.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.DataAccess\\Ahu.DataAccess.csproj",
         "projectName": "Ahu.DataAccess",
-        "projectPath": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.DataAccess\\Ahu.DataAccess.csproj",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.DataAccess\\Ahu.DataAccess.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -233,8 +251,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj": {
-                "projectPath": "C:\\Users\\Dell\\source\\repos\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj"
+              "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.Core\\Ahu.Core.csproj"
               }
             }
           }

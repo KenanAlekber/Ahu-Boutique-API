@@ -19,8 +19,4 @@
     <ProjectReference Include="..\Ahu.Core\Ahu.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Configurations\" />
-  </ItemGroup>
-
 </Project>

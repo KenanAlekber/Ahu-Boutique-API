@@ -2,7 +2,7 @@
 
 namespace Ahu.Core.Entities;
 
-public class Clothers : BaseSectionEntity
+public class Clother : BaseSectionEntity
 {
     public string Name { get; set; }
     public string Description { get; set; }
@@ -14,4 +14,5 @@ public class Clothers : BaseSectionEntity
     public int? DiscountPercent { get; set; }
     public int Rating { get; set; }
     public int StockCount { get; set; }
+    public ICollection<ClotherImage>? ClotherImages { get; set; }
 }
