@@ -12,8 +12,10 @@ public static class ServiceRegistration
     public static IServiceCollection AddBusinessServices(this IServiceCollection services)
     {
         services.AddAutoMapper(typeof(ProductMapper).Assembly);
+        services.AddAutoMapper(typeof(BrandMapper).Assembly);
 
         services.AddScoped<IProductService, ProductService>();
+        services.AddScoped<IBrandService, BrandService>();
 
         services.AddFluentValidation(v => v.RegisterValidatorsFromAssembly(typeof(ProductPostDtoValidator).Assembly));
 

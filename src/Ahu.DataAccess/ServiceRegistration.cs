@@ -17,6 +17,7 @@ public static class ServiceRegistration
         });
 
         services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<IBrandRepository, BrandRepository>();
 
         return services;
     }

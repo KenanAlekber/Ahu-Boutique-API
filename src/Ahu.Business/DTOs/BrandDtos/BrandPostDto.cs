@@ -2,4 +2,4 @@
 
 namespace Ahu.Business.DTOs.BrandDtos;
 
-public record BrandPostDto(Guid Id, string Name, List<Product> Products);
+public record BrandPostDto(string Name);
