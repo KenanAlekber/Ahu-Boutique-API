@@ -8,26 +8,10 @@ public class ProductPostDtoValidator : AbstractValidator<ProductPostDto>
     public ProductPostDtoValidator()
     {
         {
-            RuleFor(a => a.Name)
-                .NotNull()
-                .NotEmpty()
-                .MinimumLength(2)
-                .MaximumLength(250);
-            RuleFor(a => a.Description)
-                .NotNull()
-                .NotEmpty()
-                .MinimumLength(2)
-                .MaximumLength(2500);
-            RuleFor(a => a.Color)
-                .NotNull()
-                .NotEmpty()
-                .MinimumLength(2)
-                .MaximumLength(50);
-            RuleFor(a => a.Size)
-                .NotNull()
-                .NotEmpty()
-                .MinimumLength(2)
-                .MaximumLength(10);
+            RuleFor(a => a.Name).NotNull().NotEmpty().MinimumLength(2).MaximumLength(20);
+            RuleFor(a => a.Description).NotNull().NotEmpty().MinimumLength(2).MaximumLength(2500);
+            RuleFor(a => a.Color).NotNull().NotEmpty().MinimumLength(2).MaximumLength(15);
+            RuleFor(a => a.Size).NotNull().NotEmpty().MinimumLength(2).MaximumLength(10);
             RuleFor(x => x).Custom((x, context) =>
             {
                 if (x.DiscountPercent > 0)
@@ -39,18 +23,6 @@ public class ProductPostDtoValidator : AbstractValidator<ProductPostDto>
                     }
                 }
             });
-            //RuleFor(c => c).Custom((c, context) =>
-            //{
-            //    if (c.Price != null)
-            //    {
-            //        if (c.Price < 0)
-            //        {
-            //            context.AddFailure(nameof(c.Price), "");
-            //        }
-            //    }
-            //})
-            //    .NotNull()
-            //    .NotEmpty();
         }
     }
 }
