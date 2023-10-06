@@ -11,18 +11,18 @@ public class AppDbContext : DbContext
     {
     }
 
-    public DbSet<Clother> Clothers { get; set; } = null!;
-    public DbSet<ClotherImage> ClothersImages { get; set; } = null!;
-    public DbSet<Shoe> Shoes { get; set; } = null!;
-    public DbSet<ShoeImage> ShoeImages { get; set; } = null!;
+    public DbSet<Product> Products { get; set; } = null!;
+    public DbSet<ProductImage> ProductImages { get; set; } = null!;
+    public DbSet<Brand> Brands { get; set; } = null!;
+    public DbSet<Category> Categories { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ClotherConfiguration).Assembly);
-        modelBuilder.Entity<Clother>().HasQueryFilter(c => !c.IsDeleted);
-        modelBuilder.Entity<ClotherImage>().HasQueryFilter(ci => !ci.IsDeleted);
-        modelBuilder.Entity<Shoe>().HasQueryFilter(s => !s.IsDeleted);
-        modelBuilder.Entity<ShoeImage>().HasQueryFilter(si => !si.IsDeleted);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProductConfiguration).Assembly);
+        modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDeleted);
+        modelBuilder.Entity<ProductImage>().HasQueryFilter(pi => !pi.IsDeleted);
+        modelBuilder.Entity<Brand>().HasQueryFilter(b => !b.IsDeleted);
+        modelBuilder.Entity<Category>().HasQueryFilter(ca => !ca.IsDeleted);
         base.OnModelCreating(modelBuilder);
     }
 

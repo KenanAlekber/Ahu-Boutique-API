@@ -84,3 +84,6 @@ C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\obj\Deb
 C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\obj\Debug\net6.0\Ahu.API.pdb
 C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\obj\Debug\net6.0\Ahu.API.genruntimeconfig.cache
 C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\obj\Debug\net6.0\ref\Ahu.API.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

@@ -11,6 +11,7 @@ C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\refint\Ahu.
 C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\Ahu.Core.pdb
 C:\Users\Dell\source\repos\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\ref\Ahu.Core.dll
 C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\bin\Debug\net6.0\Ahu.Core.deps.json
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\bin\Debug\net6.0\Ahu.Core.runtimeconfig.json
 C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\bin\Debug\net6.0\Ahu.Core.dll
 C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\bin\Debug\net6.0\Ahu.Core.pdb
 C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\Ahu.Core.csproj.AssemblyReference.cache
@@ -21,6 +22,5 @@ C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\De
 C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\Ahu.Core.dll
 C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\refint\Ahu.Core.dll
 C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\Ahu.Core.pdb
-C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\ref\Ahu.Core.dll
-C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\bin\Debug\net6.0\Ahu.Core.runtimeconfig.json
 C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\Ahu.Core.genruntimeconfig.cache
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Debug\net6.0\ref\Ahu.Core.dll

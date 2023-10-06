@@ -1,17 +1,23 @@
-﻿//namespace Ahu.DataAccess;
+﻿using Ahu.DataAccess.Contexts;
+using Ahu.DataAccess.Repositories.Implementations;
+using Ahu.DataAccess.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
-//public class ServiceRegistration
-//{
-//    public static IServiceCollection AddDataAccessServices(this IServiceCollection services, IConfiguration configuration)
-//    {
-//        services.AddDbContext<AppDbContext>(options =>
-//        {
-//            options.UseSqlServer(configuration.GetConnectionString("Default"));
-//        });
+namespace Ahu.DataAccess;
 
-//        services.AddScoped<IAuthorRepository, AuthorRepository>();
-//        services.AddScoped<IBookRepository, BookRepository>();
+public static class ServiceRegistration
+{
+    public static IServiceCollection AddDataAccessServices(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddDbContext<AppDbContext>(options =>
+        {
+            options.UseSqlServer(configuration.GetConnectionString("Default"));
+        });
 
-//        return services;
-//    }
-//}
+        services.AddScoped<IProductRepository, ProductRepository>();
+
+        return services;
+    }
+}

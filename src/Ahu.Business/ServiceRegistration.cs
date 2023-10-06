@@ -1,19 +1,22 @@
-﻿//using Microsoft.Extensions.DependencyInjection;
+﻿using Ahu.Business.MappingProfiles;
+using Ahu.Business.Services.Implementations;
+using Ahu.Business.Services.Interfaces;
+using Ahu.Business.Validators;
+using FluentValidation.AspNetCore;
+using Microsoft.Extensions.DependencyInjection;
 
-//namespace Ahu.Business;
+namespace Ahu.Business;
 
-//public class ServiceRegistration
-//{
-//    public static IServiceCollection AddBusinessServices(this IServiceCollection services)
-//    {
-//        services.AddAutoMapper(typeof(AuthorMapper).Assembly);
+public static class ServiceRegistration
+{
+    public static IServiceCollection AddBusinessServices(this IServiceCollection services)
+    {
+        services.AddAutoMapper(typeof(ProductMapper).Assembly);
 
-//        services.AddScoped<IAuthorService, AuthorService>();
-//        services.AddScoped<IBookService, BookService>();
-//        services.AddScoped<IFileService, FileService>();
+        services.AddScoped<IProductService, ProductService>();
 
-//        services.AddFluentValidation(o => o.RegisterValidatorsFromAssembly(typeof(AuthorPostDtoValidator).Assembly));
+        services.AddFluentValidation(v => v.RegisterValidatorsFromAssembly(typeof(ProductPostDtoValidator).Assembly));
 
-//        return services;
-//    }
-//}
+        return services;
+    }
+}

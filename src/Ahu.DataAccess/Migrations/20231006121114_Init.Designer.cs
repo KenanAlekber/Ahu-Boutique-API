@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ahu.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231002075056_Init")]
+    [Migration("20231006121114_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,19 +24,11 @@ namespace Ahu.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Ahu.Core.Entities.Clother", b =>
+            modelBuilder.Entity("Ahu.Core.Entities.Brand", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Color")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedBy")
                         .IsRequired()
@@ -44,17 +36,6 @@ namespace Ahu.DataAccess.Migrations
 
                     b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("DiscountPercent")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -63,19 +44,6 @@ namespace Ahu.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Size")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StockCount")
-                        .HasColumnType("int");
-
                     b.Property<string>("UpdatedBy")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -85,16 +53,13 @@ namespace Ahu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clothers");
+                    b.ToTable("Brands");
                 });
 
-            modelBuilder.Entity("Ahu.Core.Entities.ClotherImage", b =>
+            modelBuilder.Entity("Ahu.Core.Entities.Category", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ClotherId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CreatedBy")
@@ -104,12 +69,12 @@ namespace Ahu.DataAccess.Migrations
                     b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Images")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UpdatedBy")
                         .IsRequired()
@@ -120,28 +85,27 @@ namespace Ahu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ClotherId");
-
-                    b.ToTable("ClothersImages");
+                    b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Ahu.Core.Entities.Shoe", b =>
+            modelBuilder.Entity("Ahu.Core.Entities.Product", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Brand")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("BrandId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Color")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("CostPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("CreatedBy")
                         .IsRequired()
@@ -154,17 +118,21 @@ namespace Ahu.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("DiscountPercent")
-                        .HasColumnType("int");
+                    b.Property<decimal>("DiscountPercent")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Price")
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Rate")
                         .HasColumnType("int");
 
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
+                    b.Property<decimal>("SalePrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Size")
                         .HasColumnType("int");
@@ -181,10 +149,14 @@ namespace Ahu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Shoes");
+                    b.HasIndex("BrandId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Ahu.Core.Entities.ShoeImage", b =>
+            modelBuilder.Entity("Ahu.Core.Entities.ProductImage", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -197,14 +169,21 @@ namespace Ahu.DataAccess.Migrations
                     b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Images")
+                    b.Property<string>("ImageName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("ShoeId")
+                    b.Property<bool>("PosterStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("UpdatedBy")
@@ -216,41 +195,49 @@ namespace Ahu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ShoeId");
+                    b.HasIndex("ProductId");
 
-                    b.ToTable("ShoeImages");
+                    b.ToTable("ProductImages");
                 });
 
-            modelBuilder.Entity("Ahu.Core.Entities.ClotherImage", b =>
+            modelBuilder.Entity("Ahu.Core.Entities.Product", b =>
                 {
-                    b.HasOne("Ahu.Core.Entities.Clother", "Clother")
-                        .WithMany("ClotherImages")
-                        .HasForeignKey("ClotherId")
+                    b.HasOne("Ahu.Core.Entities.Brand", "Brand")
+                        .WithMany()
+                        .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Clother");
-                });
-
-            modelBuilder.Entity("Ahu.Core.Entities.ShoeImage", b =>
-                {
-                    b.HasOne("Ahu.Core.Entities.Shoe", "Shoe")
-                        .WithMany("ShoeImages")
-                        .HasForeignKey("ShoeId")
+                    b.HasOne("Ahu.Core.Entities.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Shoe");
+                    b.Navigation("Brand");
+
+                    b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("Ahu.Core.Entities.Clother", b =>
+            modelBuilder.Entity("Ahu.Core.Entities.ProductImage", b =>
                 {
-                    b.Navigation("ClotherImages");
+                    b.HasOne("Ahu.Core.Entities.Product", "Product")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Ahu.Core.Entities.Shoe", b =>
+            modelBuilder.Entity("Ahu.Core.Entities.Category", b =>
                 {
-                    b.Navigation("ShoeImages");
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("Ahu.Core.Entities.Product", b =>
+                {
+                    b.Navigation("ProductImages");
                 });
 #pragma warning restore 612, 618
         }

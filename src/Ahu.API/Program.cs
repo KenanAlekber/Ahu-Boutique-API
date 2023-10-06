@@ -1,22 +1,27 @@
-using Ahu.DataAccess.Contexts;
-using Microsoft.EntityFrameworkCore;
+using Ahu.API.Extension;
+using Ahu.Business;
+using Ahu.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddDbContext<AppDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
-});
+//builder.Services.AddAutoMapper(option =>
+//{
+//    option.AddProfile(new ProductMapper());
+//});
+
+builder.Services.AddDataAccessServices(builder.Configuration);
+builder.Services.AddBusinessServices();
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//builder.Services.AddScoped<IProductService, ProductService>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.UseRouting();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -24,6 +29,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.AddExcepitonHandler();
 
 app.UseAuthorization();
 
