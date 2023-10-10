@@ -1,0 +1,3 @@
+﻿namespace Ahu.Business.DTOs.CategoryDtos;
+
+public record CategoryPostDto(string Name);

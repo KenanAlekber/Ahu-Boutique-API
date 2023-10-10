@@ -53,11 +53,13 @@ public class ProductService : IProductService
         return productDto;
     }
 
-    public async Task CreateProductAsync(ProductPostDto productPostDto)
+    public async Task<Guid> CreateProductAsync(ProductPostDto productPostDto)
     {
         Product product = _mapper.Map<Product>(productPostDto);
 
         await _productRepository.CreateAsync(product);
         await _productRepository.SaveAsync();
+
+        return product.Id;
     }
 }

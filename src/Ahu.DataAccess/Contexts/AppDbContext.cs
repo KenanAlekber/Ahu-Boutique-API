@@ -15,6 +15,7 @@ public class AppDbContext : DbContext
     public DbSet<ProductImage> ProductImages { get; set; } = null!;
     public DbSet<Brand> Brands { get; set; } = null!;
     public DbSet<Category> Categories { get; set; } = null!;
+    public DbSet<Slider> Sliders { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -22,7 +23,8 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDeleted);
         modelBuilder.Entity<ProductImage>().HasQueryFilter(pi => !pi.IsDeleted);
         modelBuilder.Entity<Brand>().HasQueryFilter(b => !b.IsDeleted);
-        modelBuilder.Entity<Category>().HasQueryFilter(ca => !ca.IsDeleted);
+        modelBuilder.Entity<Category>().HasQueryFilter(c => !c.IsDeleted);
+        modelBuilder.Entity<Slider>().HasQueryFilter(s => !s.IsDeleted);
         base.OnModelCreating(modelBuilder);
     }
 

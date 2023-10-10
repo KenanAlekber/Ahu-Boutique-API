@@ -1,5 +1,6 @@
 ﻿using Ahu.Business.DTOs.CommonDtos;
 using Ahu.Business.Exceptions;
+using Ahu.Core.Entities.Common;
 using Microsoft.AspNetCore.Diagnostics;
 using System.Net;
 
@@ -17,15 +18,17 @@ public static class ExceptionHandlerServiceExtension
 
                 HttpStatusCode statusCode = HttpStatusCode.InternalServerError;
                 string message = "Unexpected error occured";
+                Guid id = Guid.NewGuid();
 
                 if (feature.Error is IBaseException)
                 {
                     var exception = (IBaseException)feature.Error;
+                    id = exception.Id;
                     statusCode = exception.StatusCode;
                     message = exception.ErrorMessage;
                 }
 
-                var response = new ResponseDto(statusCode, message);
+                var response = new ResponseDto(id, statusCode, message);
 
                 context.Response.StatusCode = (int)statusCode;
                 await context.Response.WriteAsJsonAsync(response);

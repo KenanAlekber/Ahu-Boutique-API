@@ -53,11 +53,13 @@ public class BrandService : IBrandService
         return brandDto;
     }
 
-    public async Task CreateBrandAsync(BrandPostDto brandPostDto)
+    public async Task<Guid> CreateBrandAsync(BrandPostDto brandPostDto)
     {
         Brand brand = _mapper.Map<Brand>(brandPostDto);
 
         await _brandRepository.CreateAsync(brand);
         await _brandRepository.SaveAsync();
+
+        return brand.Id;
     }
 }

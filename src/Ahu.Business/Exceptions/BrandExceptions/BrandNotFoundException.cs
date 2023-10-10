@@ -9,6 +9,7 @@ public class BrandNotFoundException : Exception, IBaseException
         ErrorMessage = message;
     }
 
+    public Guid Id { get; set; }
     public HttpStatusCode StatusCode => HttpStatusCode.NotFound;
     public string ErrorMessage { get; }
 }

@@ -6,5 +6,4 @@ public class Category : BaseSectionEntity
 {
     public string Name { get; set; }
     public List<Product> Products { get; set; }
-    //public List<Shoe> Shoes { get; set; }
 }

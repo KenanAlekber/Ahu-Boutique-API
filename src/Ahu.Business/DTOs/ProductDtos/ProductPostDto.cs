@@ -1,4 +1,6 @@
-﻿namespace Ahu.Business.DTOs.ProductDtos;
+﻿using Microsoft.AspNetCore.Http;
 
-public record ProductPostDto(string Name, string Description, string? Image, decimal CostPrice, decimal SalePrice, string Color, string Size,
-    int Rating, int? DiscountPercent, int StockCount, Guid CategoryId, Guid BrandId);
+namespace Ahu.Business.DTOs.ProductDtos;
+
+public record ProductPostDto(Guid CategoryId, Guid BrandId, string Name, string Description, List<IFormFile> ImageFiles, IFormFile PosterImageFile,
+    int Rating, decimal CostPrice, decimal SalePrice, string Color, string Size, int? DiscountPercent, int StockCount);

@@ -8,6 +8,8 @@ public class BrandConfiguration : IEntityTypeConfiguration<Brand>
 {
     public void Configure(EntityTypeBuilder<Brand> builder)
     {
-        builder.Property(x => x.Name).IsRequired(true).HasMaxLength(50);
+        builder.Property(b => b.Name).IsRequired(true).HasMaxLength(50);
+
+        builder.HasMany(br => br.Products).WithOne(b => b.Brand);
     }
 }

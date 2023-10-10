@@ -12,6 +12,7 @@ public class ProductPostDtoValidator : AbstractValidator<ProductPostDto>
             RuleFor(a => a.Description).NotNull().NotEmpty().MinimumLength(2).MaximumLength(2500);
             RuleFor(a => a.Color).NotNull().NotEmpty().MinimumLength(2).MaximumLength(15);
             RuleFor(a => a.Size).NotNull().NotEmpty().MinimumLength(2).MaximumLength(10);
+
             RuleFor(x => x).Custom((x, context) =>
             {
                 if (x.DiscountPercent > 0)
@@ -20,6 +21,31 @@ public class ProductPostDtoValidator : AbstractValidator<ProductPostDto>
                     if (x.CostPrice > price)
                     {
                         context.AddFailure(nameof(x.DiscountPercent), "DiscountPercent is incorrect");
+                    }
+                }
+            });
+
+            RuleFor(s => s).Custom((s, context) =>
+            {
+                if (s != null && s.PosterImageFile != null)
+                {
+                    if (s.PosterImageFile.Length > 2097152)
+                        context.AddFailure(nameof(s.PosterImageFile), "ImageFile must be less or equal than 2MB");
+
+                    if (s.PosterImageFile.ContentType != "image/jpeg" && s.PosterImageFile.ContentType != "image/png")
+                        context.AddFailure(nameof(s.PosterImageFile), "ImageFile must be image/jpeg or image/png");
+
+                }
+
+                if (s != null && s.ImageFiles != null)
+                {
+                    foreach (var image in s.ImageFiles)
+                    {
+                        if (image.Length > 2097152)
+                            context.AddFailure(nameof(image), "ImageFile must be less or equal than 2MB");
+
+                        if (image.ContentType != "image/jpeg" && image.ContentType != "image/png")
+                            context.AddFailure(nameof(image), "ImageFile must be image/jpeg or image/png");
                     }
                 }
             });

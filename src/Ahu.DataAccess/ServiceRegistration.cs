@@ -18,6 +18,8 @@ public static class ServiceRegistration
 
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<IBrandRepository, BrandRepository>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+        services.AddScoped<ISliderRepository, SliderRepository>();
 
         return services;
     }
