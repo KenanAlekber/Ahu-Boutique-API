@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "upX8AqvTPXRB/2c0wMXVrax/pUJMgPOlgKIOebDmnRM=",
+  "Hash": "y8jWhSPSwMsTy0LJ42nP4MUPODcjW8XgLbIfr3inArI=",
   "Source": "Ahu.API",
   "BasePath": "_content/Ahu.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Ahu.API\\wwwroot",
+      "Source": "Ahu.API",
+      "ContentRoot": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\",
+      "BasePath": "_content/Ahu.API",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

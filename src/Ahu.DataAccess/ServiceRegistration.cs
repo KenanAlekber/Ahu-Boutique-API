@@ -20,6 +20,9 @@ public static class ServiceRegistration
         services.AddScoped<IBrandRepository, BrandRepository>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<ISliderRepository, SliderRepository>();
+        services.AddScoped<IOrderRepository, OrderRepository>();
+        services.AddScoped<IBasketRepository, BasketRepository>();
+        services.AddScoped<IStoreDataRepository, StoreDataRepository>();
 
         return services;
     }

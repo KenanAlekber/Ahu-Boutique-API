@@ -17,6 +17,9 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
         _table = _context.Set<T>();
     }
 
+    public void Add(T entity)
+        => _table.Add(entity);
+
     public IQueryable<T> GetAll()
         => _table.AsQueryable();
 

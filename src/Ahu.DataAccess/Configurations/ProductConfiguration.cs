@@ -18,7 +18,8 @@ public class ProductConfiguration
         builder.Property(sh => sh.BrandId).IsRequired(true).HasMaxLength(250);
         builder.Property(sh => sh.IsDeleted).HasDefaultValue(false);
 
-        builder.HasMany(si => si.ProductImages).WithOne(s => s.Product);
-        builder.HasOne(ca => ca.Category).WithMany(c => c.Products).OnDelete(DeleteBehavior.NoAction);
+        builder.HasMany(p => p.ProductImages).WithOne(i => i.Product);
+        builder.HasOne(p => p.Brand).WithMany(b => b.Products);
+        builder.HasOne(p => p.Category).WithMany(c => c.Products);
     }
 }

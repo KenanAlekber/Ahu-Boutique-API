@@ -5,6 +5,7 @@ namespace Ahu.DataAccess.Repositories.Interfaces;
 
 public interface IRepository<T> where T : BaseEntity
 {
+    void Add(T entity);
     IQueryable<T> GetAll();
     IQueryable<T> GetFiltered(Expression<Func<T, bool>> expression);
     Task<T> GetSingleAsync(Expression<Func<T, bool>> expression);

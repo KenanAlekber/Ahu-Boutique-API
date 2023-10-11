@@ -13,10 +13,13 @@ public static class ServiceRegistration
     {
         services.AddAutoMapper(typeof(ProductMapper).Assembly);
 
-        services.AddScoped<IProductService, ProductService>();
+        services.AddScoped<IBasketService, BasketService>();
         services.AddScoped<IBrandService, BrandService>();
         services.AddScoped<ICategoryService, CategoryService>();
+        services.AddScoped<IProductService, ProductService>();
         services.AddScoped<ISliderService, SliderService>();
+        services.AddScoped<IOrderService, OrderService>();
+        services.AddScoped<IStoreDataService, StoreDataService>();
 
         services.AddFluentValidation(p => p.RegisterValidatorsFromAssembly(typeof(ProductPostDtoValidator).Assembly));
 
