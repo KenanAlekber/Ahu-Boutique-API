@@ -2,7 +2,10 @@
 using Ahu.Business.Services.Implementations;
 using Ahu.Business.Services.Interfaces;
 using Ahu.Business.Validators;
+using Ahu.Core.Entities.Identity;
+using Ahu.DataAccess.Contexts;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Ahu.Business;
@@ -13,6 +16,22 @@ public static class ServiceRegistration
     {
         services.AddAutoMapper(typeof(ProductMapper).Assembly);
 
+        services.AddIdentity<AppUser, IdentityRole>(options =>
+        {
+            options.Password.RequireNonAlphanumeric = true;
+            options.Password.RequireDigit = true;
+            options.Password.RequireLowercase = true;
+            options.Password.RequireUppercase = true;
+            options.Password.RequiredLength = 8;
+
+            options.User.RequireUniqueEmail = true;
+
+            options.Lockout.MaxFailedAccessAttempts = 3;
+            options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
+            options.Lockout.AllowedForNewUsers = false;
+
+        }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders().AddTokenProvider<DataProtectorTokenProvider<AppUser>>("twofactor");
+
         services.AddScoped<IBasketService, BasketService>();
         services.AddScoped<IBrandService, BrandService>();
         services.AddScoped<ICategoryService, CategoryService>();
@@ -20,6 +39,7 @@ public static class ServiceRegistration
         services.AddScoped<ISliderService, SliderService>();
         services.AddScoped<IOrderService, OrderService>();
         services.AddScoped<IStoreDataService, StoreDataService>();
+        services.AddScoped<IEmailSender, EmailSender>();
 
         services.AddFluentValidation(p => p.RegisterValidatorsFromAssembly(typeof(ProductPostDtoValidator).Assembly));
 

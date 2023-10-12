@@ -88,3 +88,12 @@ C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Deb
 C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\Ahu.API.staticwebassets.runtime.json
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\MailKit.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\MimeKit.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

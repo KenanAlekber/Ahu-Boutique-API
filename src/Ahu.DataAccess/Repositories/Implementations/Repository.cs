@@ -20,14 +20,50 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
     public void Add(T entity)
         => _table.Add(entity);
 
-    public IQueryable<T> GetAll()
-        => _table.AsQueryable();
+    public IQueryable<T> GetAll(Expression<Func<T, bool>> expression, params string[] includes)
+    {
+        var query = _table.AsQueryable();
 
-    public IQueryable<T> GetFiltered(Expression<Func<T, bool>> expression)
-        => _table.Where(expression).AsQueryable();
+        if (includes is not null && includes.Length > 0)
+        {
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+        }
 
-    public async Task<T> GetSingleAsync(Expression<Func<T, bool>> expression)
-        => await _table.FirstOrDefaultAsync(expression);
+        return query;
+    }
+
+    public IQueryable<T> GetFiltered(Expression<Func<T, bool>> expression, params string[] includes)
+    {
+        var query = _table.AsQueryable();
+
+        if (includes is not null && includes.Length > 0)
+        {
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+        }
+
+        return query.Where(expression);
+    }
+
+    public async Task<T> GetSingleAsync(Expression<Func<T, bool>> expression, params string[] includes)
+    {
+        var query = _table.AsQueryable();
+
+        if (includes is not null && includes.Length > 0)
+        {
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+        }
+
+        return await query.FirstOrDefaultAsync(expression);
+    }
 
     public async Task CreateAsync(T entity)
         => _table.AddAsync(entity);
@@ -41,8 +77,20 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
     public void SoftDelete(T entity)
         => entity.IsDeleted = true;
 
-    public async Task<bool> IsExistAsync(Expression<Func<T, bool>> expression)
-           => await _table.AnyAsync(expression);
+    public async Task<bool> IsExistAsync(Expression<Func<T, bool>> expression, params string[] includes)
+    {
+        var query = _table.AsQueryable();
+
+        if (includes is not null && includes.Length > 0)
+        {
+            foreach (var include in includes)
+            {
+                query.Include(include);
+            }
+        }
+
+        return await query.AnyAsync(expression);
+    }
 
     public async Task<int> SaveAsync()
         => await _context.SaveChangesAsync();

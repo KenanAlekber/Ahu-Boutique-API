@@ -21,7 +21,7 @@ public class ProductService : IProductService
 
     public async Task<List<ProductGetDto>> GetAllProductsAsync(string? search)
     {
-        var products = await _productRepository.GetFiltered(p => search != null ? p.Name.Contains(search) : true).ToListAsync();
+        var products = await _productRepository.GetFiltered(p => search != null ? p.Name.Contains(search) : true, "Product").ToListAsync();
 
         List<ProductGetDto> productDtos = null;
 
@@ -43,7 +43,7 @@ public class ProductService : IProductService
 
     public async Task<ProductGetDto> GetProductByIdAsync(Guid id)
     {
-        var product = await _productRepository.GetSingleAsync(c => c.Id == id);
+        var product = await _productRepository.GetSingleAsync(c => c.Id == id, "Product");
 
         if (product == null)
             throw new ProductNotFoundException($"Product is not found by id: {id}");

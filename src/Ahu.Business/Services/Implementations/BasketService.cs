@@ -1,6 +1,7 @@
 ﻿using Ahu.Business.DTOs.BasketItemDtos;
 using Ahu.Business.Exceptions;
 using Ahu.Business.Services.Interfaces;
+using Ahu.Core.Entities;
 using Ahu.DataAccess.Repositories.Interfaces;
 using AutoMapper;
 
@@ -19,17 +20,16 @@ public class BasketService : IBasketService
 
     public List<BasketGetDto> GetAllBaskets(Guid userId)
     {
-        //var baskets = _basketRepository.GetAll(b => b.UserId == userId, "Product");
+        var baskets = _basketRepository.GetAll(b => b.UserId==userId.ToString(), "Product"); 
 
-        //return _mapper.Map<List<BasketGetDto>>(baskets);
-        throw new NotImplementedException();
+        return _mapper.Map<List<BasketGetDto>>(baskets);
     }
 
     public void AddToBasket(BasketPostDto basketPostDto)
     {
-        //var basket = _basketRepository.GetFiltered(b => b.ProductId == basketPostDto.ProductId && /*x.UserId == dto.UserId, "Product"*/);
+        var basket = _basketRepository.GetSingleAsync(b => b.ProductId == basketPostDto.ProductId && b.UserId == basketPostDto.UserId.ToString(), "Product");
 
-        //if (basket != null)
+        //if (basket is not null)
         //{
         //    basket.Count++;
         //}
@@ -37,23 +37,24 @@ public class BasketService : IBasketService
         //{
         //    basket = _mapper.Map<BasketItem>(basketPostDto);
         //    basket.Count = 1;
-        //    basket.UserId = basketPostDto.UserId;
+        //    basket.UserId = basketPostDto.UserId.ToString();
         //    _basketRepository.Add(basket);
         //}
 
-        //_basketRepository.SaveAsync();
+        _basketRepository.SaveAsync();
     }
 
     public void ReduceBasketItem(BasketPostDto basketPostDto)
     {
         List<RestExceptionError> errors = new List<RestExceptionError>();
 
-        var basket = _basketRepository.GetFiltered(x => x.ProductId == basketPostDto.ProductId /*&& x.UserId == basketPostDto.UserId*/);
+        var basket = _basketRepository.GetSingleAsync(x => x.ProductId == basketPostDto.ProductId && x.UserId == basketPostDto.UserId.ToString(), "Product");
 
         if (basket == null)
             errors.Add(new RestExceptionError("ProductId", "ProductId is not correct"));
 
-        if (errors.Count > 0) throw new RestException(System.Net.HttpStatusCode.BadRequest, errors);
+        if (errors.Count > 0) 
+            throw new RestException(System.Net.HttpStatusCode.BadRequest, errors);
 
         //if (basket.Count > 1)
         //{
@@ -69,24 +70,25 @@ public class BasketService : IBasketService
 
     public void DeleteBasket(Guid id)
     {
-        var basket = _basketRepository.GetFiltered(x => x.ProductId == id);
+        BasketItem basket = (BasketItem)_basketRepository.GetFiltered(x => x.ProductId == id, "Product");
 
         if (basket is null) 
             throw new RestException(System.Net.HttpStatusCode.NotFound, "Item not found");
 
-        //_basketRepository.Delete(basket);
+        _basketRepository.Delete(basket);
         _basketRepository.SaveAsync();
     }
 
     public void DeleteAllBaskets(Guid userId)
     {
-        //var baskets = _basketRepository.GetAll(x => x.UserId == userId).ToList();
+        var baskets = _basketRepository.GetAll(x => x.UserId == userId.ToString(), "Product").ToList();
 
-        //if (baskets == null) throw new RestException(System.Net.HttpStatusCode.NotFound, "Item not found");
+        if (baskets is null) 
+            throw new RestException(System.Net.HttpStatusCode.NotFound, "Item not found");
 
-        //foreach (var basket in baskets)
-        //    _basketRepository.Delete(basket);
+        foreach (var basket in baskets)
+            _basketRepository.Delete(basket);
 
-        //_basketRepository.SaveAsync();
+        _basketRepository.SaveAsync();
     }
 }

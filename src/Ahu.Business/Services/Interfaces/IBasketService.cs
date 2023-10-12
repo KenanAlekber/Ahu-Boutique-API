@@ -4,8 +4,8 @@ namespace Ahu.Business.Services.Interfaces;
 
 public interface IBasketService
 {
-    void ReduceBasketItem(BasketPostDto dto);
-    void AddToBasket(BasketPostDto dto);
+    void ReduceBasketItem(BasketPostDto basketPostDto);
+    void AddToBasket(BasketPostDto basketPostDto);
     List<BasketGetDto> GetAllBaskets(Guid userId);
     void DeleteBasket(Guid id);
     void DeleteAllBaskets(Guid userId);
