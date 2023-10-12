@@ -22,7 +22,7 @@ public class OrderService : IOrderService
 
     public async Task<List<OrderGetDto>> GetAllOrdersAsync(string? search)
     {
-        var orders = await _orderRepository.GetFiltered(p => search != null ? p.FullName.Contains(search) : true).ToListAsync();
+        var orders = await _orderRepository.GetFiltered(p => search != null ? p.FullName.Contains(search) : true, "Product").ToListAsync();
         List<OrderGetDto> orderGetDtos = null;
 
         try
@@ -43,7 +43,7 @@ public class OrderService : IOrderService
 
     public async Task<OrderGetDto> GetOrderByIdAsync(Guid id)
     {
-        var order = await _orderRepository.GetSingleAsync(c => c.Id == id);
+        var order = await _orderRepository.GetSingleAsync(c => c.Id == id, "Product");
 
         if (order == null)
             throw new OrderNotFoundException($"Order is not found by id: {id}");

@@ -21,7 +21,7 @@ public class BrandService : IBrandService
 
     public async Task<List<BrandGetDto>> GetAllBrandsAsync(string? search)
     {
-        var brands = await _brandRepository.GetFiltered(p => search != null ? p.Name.Contains(search) : true).ToListAsync();
+        var brands = await _brandRepository.GetFiltered(p => search != null ? p.Name.Contains(search) : true, "Brand").ToListAsync();
 
         List<BrandGetDto> brandDtos = null;
 
@@ -43,7 +43,7 @@ public class BrandService : IBrandService
 
     public async Task<BrandGetDto> GetBrandByIdAsync(Guid id)
     {
-        var brand = await _brandRepository.GetSingleAsync(c => c.Id == id);
+        var brand = await _brandRepository.GetSingleAsync(c => c.Id == id, "Brand");
 
         if (brand == null)
             throw new BrandNotFoundException($"Brand is not found by id: {id}");
