@@ -2,4 +2,4 @@
 
 namespace Ahu.Business.DTOs.SliderDtos;
 
-public record SliderGetDto(Guid Id, string Title, string Description, string Image);
+public record SliderGetDto(Guid Id, string Title, string Description, string ImageName, string ImageUrl);

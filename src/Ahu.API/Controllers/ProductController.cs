@@ -18,20 +18,20 @@ public class ProductController : ControllerBase
     }
 
     [HttpGet("")]
-    public async Task<IActionResult> GetAll([FromQuery] string? search)
+    public async Task<IActionResult> GetAllProducts()
     {
-        return Ok(await _productService.GetAllProductsAsync(search));
+        return Ok(await _productService.GetAllProductsAsync());
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> Get(Guid id)
+    public async Task<IActionResult> GetProductById(Guid id)
     {
         var product = await _productService.GetProductByIdAsync(id);
         return Ok(product);
     }
 
     [HttpPost("")]
-    public async Task<IActionResult> Create(ProductPostDto productPostDto)
+    public async Task<IActionResult> CreateProduct([FromForm] ProductPostDto productPostDto)
     {
         var result = await _productService.CreateProductAsync(productPostDto);
         return StatusCode((int)HttpStatusCode.Created, new ResponseDto(result, HttpStatusCode.Created, "Product successfully created"));

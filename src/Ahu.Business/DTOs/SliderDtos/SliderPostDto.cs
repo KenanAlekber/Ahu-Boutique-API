@@ -2,4 +2,4 @@
 
 namespace Ahu.Business.DTOs.SliderDtos;
 
-public record SliderPostDto(string Title, string Description, IFormFile ImageFile);
+public record SliderPostDto(string Title, string Description, IFormFile? ImageFile);

@@ -10,7 +10,7 @@ public class Product : BaseSectionEntity
     public decimal CostPrice { get; set; }
     public decimal DiscountPercent { get; set; }
     public string Color { get; set; }
-    public int Size { get; set; }
+    public string Size { get; set; }
     public int StockCount { get; set; }
     public int Rate { get; set; }
     public Category Category { get; set; }

@@ -17,21 +17,21 @@ namespace Ahu.API.Controllers
             _sliderService = sliderService;
         }
 
-        [HttpGet("")]
-        public async Task<IActionResult> GetAll([FromQuery] string? search)
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAllSliders([FromQuery] string? search)
         {
-            return Ok(await _sliderService.GetAllSlidersAsync(search));
+            return Ok(_sliderService.GetAllSlidersAsync(search));
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(Guid id)
+        public async Task<IActionResult> GetSliderById(Guid id)
         {
             var slider = await _sliderService.GetSliderByIdAsync(id);
             return Ok(slider);
         }
 
         [HttpPost("")]
-        public async Task<IActionResult> Create(SliderPostDto sliderPostDto)
+        public async Task<IActionResult> CreateSlider([FromForm] SliderPostDto sliderPostDto)
         {
             var result = await _sliderService.CreateSliderAsync(sliderPostDto);
             return StatusCode((int)HttpStatusCode.Created, new ResponseDto(result, HttpStatusCode.Created, "Slider successfully created"));

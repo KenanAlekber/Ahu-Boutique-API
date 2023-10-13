@@ -1,5 +1,4 @@
-﻿using Ahu.Business.DTOs.ProductDtos;
-using Ahu.Business.DTOs.SliderDtos;
+﻿using Ahu.Business.DTOs.SliderDtos;
 
 namespace Ahu.Business.Services.Interfaces;
 

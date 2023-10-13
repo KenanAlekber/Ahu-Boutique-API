@@ -19,9 +19,9 @@ public class BrandService : IBrandService
         _mapper = mapper;
     }
 
-    public async Task<List<BrandGetDto>> GetAllBrandsAsync(string? search)
+    public async Task<List<BrandGetDto>> GetAllBrandsAsync()
     {
-        var brands = await _brandRepository.GetFiltered(p => search != null ? p.Name.Contains(search) : true, "Brand").ToListAsync();
+        var brands = await _brandRepository.GetFiltered(p => true).ToListAsync();
 
         List<BrandGetDto> brandDtos = null;
 

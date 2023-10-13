@@ -14,13 +14,15 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UseRouting();
-
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())    
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseDefaultFiles();
+app.UseRouting();
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 

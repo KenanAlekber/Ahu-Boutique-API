@@ -11,7 +11,7 @@ public class ProductPostDtoValidator : AbstractValidator<ProductPostDto>
             RuleFor(a => a.Name).NotNull().NotEmpty().MinimumLength(2).MaximumLength(20);
             RuleFor(a => a.Description).NotNull().NotEmpty().MinimumLength(2).MaximumLength(2500);
             RuleFor(a => a.Color).NotNull().NotEmpty().MinimumLength(2).MaximumLength(15);
-            RuleFor(a => a.Size).NotNull().NotEmpty().MinimumLength(2).MaximumLength(10);
+            RuleFor(a => a.Size).NotNull().NotEmpty().MinimumLength(1).MaximumLength(10);
 
             RuleFor(x => x).Custom((x, context) =>
             {
@@ -32,9 +32,9 @@ public class ProductPostDtoValidator : AbstractValidator<ProductPostDto>
                     if (s.PosterImageFile.Length > 2097152)
                         context.AddFailure(nameof(s.PosterImageFile), "ImageFile must be less or equal than 2MB");
 
-                    if (s.PosterImageFile.ContentType != "image/jpeg" && s.PosterImageFile.ContentType != "image/png")
-                        context.AddFailure(nameof(s.PosterImageFile), "ImageFile must be image/jpeg or image/png");
-
+                    if (s.PosterImageFile.ContentType != "image/jpeg" && s.PosterImageFile.ContentType != "image/png" 
+                    && s.PosterImageFile.ContentType != "image/webp")
+                        context.AddFailure(nameof(s.PosterImageFile), "ImageFile must be image/jpeg, image/png or image/webp");
                 }
 
                 if (s != null && s.ImageFiles != null)
@@ -44,8 +44,9 @@ public class ProductPostDtoValidator : AbstractValidator<ProductPostDto>
                         if (image.Length > 2097152)
                             context.AddFailure(nameof(image), "ImageFile must be less or equal than 2MB");
 
-                        if (image.ContentType != "image/jpeg" && image.ContentType != "image/png")
-                            context.AddFailure(nameof(image), "ImageFile must be image/jpeg or image/png");
+                        if (image.ContentType != "image/jpeg" && image.ContentType != "image/png"
+                        && s.PosterImageFile.ContentType != "image/webp")
+                            context.AddFailure(nameof(image), "ImageFile must be image/jpeg, image/png or image/webp");
                     }
                 }
             });

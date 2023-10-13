@@ -10,6 +10,6 @@ public class SliderConfiguration : IEntityTypeConfiguration<Slider>
     {
         builder.Property(s => s.Title).HasMaxLength(20).IsRequired(false);
         builder.Property(s => s.Description).HasMaxLength(150).IsRequired(false);
-        builder.Property(s => s.Image).HasMaxLength(100).IsRequired(true);
+        builder.Property(s => s.ImageName).HasMaxLength(100).IsRequired(true);
     }
 }

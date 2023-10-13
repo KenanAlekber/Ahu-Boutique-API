@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Files\\2303dbbf-ab9c-4e44-82b5-2f836912574ddownload (1).webp",
+      "PackagePath": "staticwebassets\\Uploads\\Files\\2303dbbf-ab9c-4e44-82b5-2f836912574ddownload (1).webp"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Files\\25581ac2-a74d-4991-a242-a8d5b803cfeeWIN_20221123_13_10_26_Pro.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Files\\25581ac2-a74d-4991-a242-a8d5b803cfeeWIN_20221123_13_10_26_Pro.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Files\\2d09b9c6-cef0-4fe6-8a31-97c3b69af924WIN_20221116_14_46_38_Pro.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Files\\2d09b9c6-cef0-4fe6-8a31-97c3b69af924WIN_20221116_14_46_38_Pro.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Files\\30e80ebd-0080-44f7-bd07-21e551f2ce09download (1).webp",
+      "PackagePath": "staticwebassets\\Uploads\\Files\\30e80ebd-0080-44f7-bd07-21e551f2ce09download (1).webp"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Files\\837de116-2ecf-4340-9a7a-bccde836c174download.webp",
+      "PackagePath": "staticwebassets\\Uploads\\Files\\837de116-2ecf-4340-9a7a-bccde836c174download.webp"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Files\\9c9815ac-6f53-4e2a-b254-1fb05c9995e5WIN_20221116_14_46_38_Pro.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Files\\9c9815ac-6f53-4e2a-b254-1fb05c9995e5WIN_20221116_14_46_38_Pro.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Files\\cb119417-3a21-4027-8c3f-5d8171115117download.webp",
+      "PackagePath": "staticwebassets\\Uploads\\Files\\cb119417-3a21-4027-8c3f-5d8171115117download.webp"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Files\\download.webp",
+      "PackagePath": "staticwebassets\\Uploads\\Files\\download.webp"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Files\\ef7a42c7-c35e-4ec6-843c-50f7984f7effWIN_20221116_14_46_38_Pro.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Files\\ef7a42c7-c35e-4ec6-843c-50f7984f7effWIN_20221116_14_46_38_Pro.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Ahu.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Ahu.API.props",
+      "PackagePath": "build\\Ahu.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Ahu.API.props",
+      "PackagePath": "buildMultiTargeting\\Ahu.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Ahu.API.props",
+      "PackagePath": "buildTransitive\\Ahu.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

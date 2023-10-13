@@ -1,5 +1,7 @@
 ﻿using Ahu.Business.DTOs.SliderDtos;
+using Ahu.Business.Exceptions;
 using Ahu.Business.Exceptions.SliderExceptions;
+using Ahu.Business.Helpers;
 using Ahu.Business.Services.Interfaces;
 using Ahu.Core.Entities;
 using Ahu.DataAccess.Repositories.Interfaces;
@@ -55,10 +57,23 @@ public class SliderService : ISliderService
 
     public async Task<Guid> CreateSliderAsync(SliderPostDto sliderPostDto)
     {
-        Slider slider = _mapper.Map<Slider>(sliderPostDto);
+        List<RestExceptionError> errors = new List<RestExceptionError>();
 
-        await _sliderRepository.CreateAsync(slider);
-        await _sliderRepository.SaveAsync();
+        if (await _sliderRepository.IsExistAsync(x => x.Title == sliderPostDto.Title))
+            errors.Add(new RestExceptionError("Title", "Title is already exists"));
+
+        if (errors.Count > 0)
+            throw new RestException(System.Net.HttpStatusCode.Conflict, errors);
+
+        var slider = _mapper.Map<Slider>(sliderPostDto);
+
+        string rootPath = Directory.GetCurrentDirectory() + "/wwwroot";
+
+        slider.ImageName = FileManager.Save(sliderPostDto.ImageFile, rootPath, "uploads/files");
+        slider.ImageUrl = "/uploads/files/" + slider.ImageName;
+
+        _sliderRepository.Add(slider);
+        _sliderRepository.SaveAsync();
 
         return slider.Id;
     }

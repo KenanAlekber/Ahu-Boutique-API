@@ -14,9 +14,8 @@ public class SliderPostDtoValidator : AbstractValidator<SliderPostDto>
             if (s.ImageFile.Length > 2097152)
                 context.AddFailure(nameof(s.ImageFile), "ImageFile must be less or equal than 2MB");
 
-            if (s.ImageFile.ContentType != "image/jpeg" && s.ImageFile.ContentType != "image/png")
-                context.AddFailure(nameof(s.ImageFile), "ImageFile must be image/jpeg or image/png");
+            if (s.ImageFile.ContentType != "image/jpeg" && s.ImageFile.ContentType != "image/png" && s.ImageFile.ContentType != "image/webp")
+                context.AddFailure(nameof(s.ImageFile), "ImageFile must be image/jpeg or image/webp");
         });
-
     }
 }

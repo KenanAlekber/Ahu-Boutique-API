@@ -10,5 +10,8 @@ public class ProductMapper : Profile
     {
         CreateMap<ProductPostDto, Product>().ReverseMap();
         CreateMap<Product, ProductGetDto>().ReverseMap();
+        CreateMap<Brand, BrandInProductGetDto>().ReverseMap();
+        CreateMap<Category, CategoryInProductGetDto>().ReverseMap();
+        CreateMap<ProductImage, ProductImagesInProductGetDto>().ReverseMap();
     }
 }

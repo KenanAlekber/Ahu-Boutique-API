@@ -18,20 +18,20 @@ public class BrandController : ControllerBase
     }
 
     [HttpGet("")]
-    public async Task<IActionResult> GetAll([FromQuery] string? search)
+    public async Task<IActionResult> GetAllBrands()
     {
-        return Ok(await _brandService.GetAllBrandsAsync(search));
+        return Ok(await _brandService.GetAllBrandsAsync());
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> Get(Guid id)
+    public async Task<IActionResult> GetBrandById(Guid id)
     {
         var brand = await _brandService.GetBrandByIdAsync(id);
         return Ok(brand);
     }
 
     [HttpPost("")]
-    public async Task<IActionResult> Create(BrandPostDto brandPostDto)
+    public async Task<IActionResult> CreateBrand(BrandPostDto brandPostDto)
     {
         var result = await _brandService.CreateBrandAsync(brandPostDto);
         return StatusCode((int)HttpStatusCode.Created, new ResponseDto(result, HttpStatusCode.Created, "Brand successfully created"));
