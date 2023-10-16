@@ -18,9 +18,9 @@ public class CategoryController : ControllerBase
     }
 
     [HttpGet("")]
-    public async Task<IActionResult> GetAllCategories([FromQuery] string? search)
+    public async Task<IActionResult> GetAllCategories()
     {
-        return Ok(await _categoryService.GetAllCategorysAsync(search));
+        return Ok(await _categoryService.GetAllCategorysAsync());
     }
 
     [HttpGet("{id}")]

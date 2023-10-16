@@ -4,7 +4,7 @@ namespace Ahu.Business.Services.Interfaces;
 
 public interface ICategoryService
 {
-    Task<List<CategoryGetDto>> GetAllCategorysAsync(string? search);
+    Task<List<CategoryGetDto>> GetAllCategorysAsync();
     Task<CategoryGetDto> GetCategoryByIdAsync(Guid id);
     Task<Guid> CreateCategoryAsync(CategoryPostDto categoryPostDto);
 }

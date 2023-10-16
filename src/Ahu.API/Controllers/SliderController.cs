@@ -18,9 +18,9 @@ namespace Ahu.API.Controllers
         }
 
         [HttpGet("all")]
-        public async Task<IActionResult> GetAllSliders([FromQuery] string? search)
+        public async Task<IActionResult> GetAllSliders()
         {
-            return Ok(_sliderService.GetAllSlidersAsync(search));
+            return Ok(await _sliderService.GetAllSlidersAsync());
         }
 
         [HttpGet("{id}")]

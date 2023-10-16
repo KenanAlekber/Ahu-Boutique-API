@@ -24,7 +24,7 @@ public class ProductService : IProductService
 
     public async Task<List<ProductGetDto>> GetAllProductsAsync()
     {
-        List<Product> products = await _productRepository.GetAll(p => true, "Brand", "Category").ToListAsync();
+        List<Product> products = await _productRepository.GetFiltered(p => true).ToListAsync();
         List<ProductGetDto> productDtos = null;
 
         try
@@ -81,8 +81,8 @@ public class ProductService : IProductService
             ProductImage img = new ProductImage();
 
             img.ProductId = product.Id;
-            img.ImageName = FileManager.Save(productPostDto.ImageFiles[idx], rootPath, "uploads/files");
-            img.ImageUrl = "/uploads/files/" + img.ImageName;
+            img.ImageName = FileManager.Save(productPostDto.ImageFiles[idx], rootPath, "uploads/products");
+            img.ImageUrl = "/uploads/products/" + img.ImageName;
             img.PosterStatus = false;
 
             await _productImageRepository.CreateAsync(img);
@@ -91,8 +91,8 @@ public class ProductService : IProductService
 
         ProductImage posterImg = new ProductImage();
         posterImg.ProductId = product.Id;
-        posterImg.ImageName = FileManager.Save(productPostDto.PosterImageFile, rootPath, "uploads/files");
-        posterImg.ImageUrl = "/uploads/files/" + posterImg.ImageName;
+        posterImg.ImageName = FileManager.Save(productPostDto.PosterImageFile, rootPath, "uploads/products");
+        posterImg.ImageUrl = "/uploads/products/" + posterImg.ImageName;
         posterImg.PosterStatus = true;
 
         await _productImageRepository.CreateAsync(posterImg);

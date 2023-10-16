@@ -20,9 +20,9 @@ public class OrderService : IOrderService
         _mapper = mapper;
     }
 
-    public async Task<List<OrderGetDto>> GetAllOrdersAsync(string? search)
+    public async Task<List<OrderGetDto>> GetAllOrdersAsync()
     {
-        var orders = await _orderRepository.GetFiltered(p => search != null ? p.FullName.Contains(search) : true, "Product").ToListAsync();
+        var orders = await _orderRepository.GetFiltered(p => true).ToListAsync();
         List<OrderGetDto> orderGetDtos = null;
 
         try

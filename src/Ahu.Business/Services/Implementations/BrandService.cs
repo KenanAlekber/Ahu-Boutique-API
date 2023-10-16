@@ -21,7 +21,7 @@ public class BrandService : IBrandService
 
     public async Task<List<BrandGetDto>> GetAllBrandsAsync()
     {
-        var brands = await _brandRepository.GetFiltered(p => true).ToListAsync();
+        var brands = await _brandRepository.GetAll(p => true).ToListAsync();
 
         List<BrandGetDto> brandDtos = null;
 

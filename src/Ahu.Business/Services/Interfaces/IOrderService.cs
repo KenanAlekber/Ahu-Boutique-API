@@ -4,7 +4,7 @@ namespace Ahu.Business.Services.Interfaces;
 
 public interface IOrderService
 {
-    Task<List<OrderGetDto>> GetAllOrdersAsync(string? search);
+    Task<List<OrderGetDto>> GetAllOrdersAsync();
     Task<OrderGetDto> GetOrderByIdAsync(Guid id);
     Task<Guid> CreateOrderAsync(OrderPostDto orderPostDto);
 }

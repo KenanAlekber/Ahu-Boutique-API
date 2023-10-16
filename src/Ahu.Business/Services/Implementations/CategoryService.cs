@@ -20,9 +20,9 @@ public class CategoryService : ICategoryService
         _mapper = mapper;
     }
 
-    public async Task<List<CategoryGetDto>> GetAllCategorysAsync(string? search)
+    public async Task<List<CategoryGetDto>> GetAllCategorysAsync()
     {
-        var categories = await _categoryRepository.GetFiltered(c => search != null ? c.Name.Contains(search) : true).ToListAsync();
+        var categories = await _categoryRepository.GetAll(c => true).ToListAsync();
 
         List<CategoryGetDto> categoryDtos = null;
 

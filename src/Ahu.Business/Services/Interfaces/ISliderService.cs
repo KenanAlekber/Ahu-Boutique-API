@@ -4,7 +4,7 @@ namespace Ahu.Business.Services.Interfaces;
 
 public interface ISliderService
 {
-    Task<List<SliderGetDto>> GetAllSlidersAsync(string? search);
+    Task<List<SliderGetDto>> GetAllSlidersAsync();
     Task<SliderGetDto> GetSliderByIdAsync(Guid id);
     Task<Guid> CreateSliderAsync(SliderPostDto sliderPostDto);
 }

@@ -21,9 +21,9 @@ public class SliderService : ISliderService
         _mapper = mapper;
     }
 
-    public async Task<List<SliderGetDto>> GetAllSlidersAsync(string? search)
+    public async Task<List<SliderGetDto>> GetAllSlidersAsync()
     {
-        var sliders = await _sliderRepository.GetFiltered(s => search != null ? s.Title.Contains(search) : true).ToListAsync();
+        var sliders = await _sliderRepository.GetFiltered(s => true).ToListAsync();
 
         List<SliderGetDto> sliderDtos = null;
 
@@ -69,11 +69,11 @@ public class SliderService : ISliderService
 
         string rootPath = Directory.GetCurrentDirectory() + "/wwwroot";
 
-        slider.ImageName = FileManager.Save(sliderPostDto.ImageFile, rootPath, "uploads/files");
-        slider.ImageUrl = "/uploads/files/" + slider.ImageName;
+        slider.ImageName = FileManager.Save(sliderPostDto.ImageFile, rootPath, "uploads/sliders");
+        slider.ImageUrl = "/uploads/sliders/" + slider.ImageName;
 
         _sliderRepository.Add(slider);
-        _sliderRepository.SaveAsync();
+        await _sliderRepository.SaveAsync();
 
         return slider.Id;
     }

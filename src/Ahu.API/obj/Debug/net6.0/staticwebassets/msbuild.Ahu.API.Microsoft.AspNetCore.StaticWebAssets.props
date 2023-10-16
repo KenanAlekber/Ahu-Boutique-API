@@ -1,11 +1,11 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\2303dbbf-ab9c-4e44-82b5-2f836912574ddownload (1).webp))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Sliders\7b3cd987-fa02-4fff-b5fd-50125c1f8534download (1).webp))">
       <SourceType>Package</SourceType>
       <SourceId>Ahu.API</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ahu.API</BasePath>
-      <RelativePath>Uploads/Files/2303dbbf-ab9c-4e44-82b5-2f836912574ddownload (1).webp</RelativePath>
+      <RelativePath>Uploads/Sliders/7b3cd987-fa02-4fff-b5fd-50125c1f8534download (1).webp</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -14,14 +14,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\2303dbbf-ab9c-4e44-82b5-2f836912574ddownload (1).webp))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Sliders\7b3cd987-fa02-4fff-b5fd-50125c1f8534download (1).webp))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\25581ac2-a74d-4991-a242-a8d5b803cfeeWIN_20221123_13_10_26_Pro.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Sliders\def6926d-a7e6-468d-a1ca-ccb1bd9b2558download.webp))">
       <SourceType>Package</SourceType>
       <SourceId>Ahu.API</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Ahu.API</BasePath>
-      <RelativePath>Uploads/Files/25581ac2-a74d-4991-a242-a8d5b803cfeeWIN_20221123_13_10_26_Pro.jpg</RelativePath>
+      <RelativePath>Uploads/Sliders/def6926d-a7e6-468d-a1ca-ccb1bd9b2558download.webp</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -30,119 +30,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\25581ac2-a74d-4991-a242-a8d5b803cfeeWIN_20221123_13_10_26_Pro.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\2d09b9c6-cef0-4fe6-8a31-97c3b69af924WIN_20221116_14_46_38_Pro.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ahu.API</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ahu.API</BasePath>
-      <RelativePath>Uploads/Files/2d09b9c6-cef0-4fe6-8a31-97c3b69af924WIN_20221116_14_46_38_Pro.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\2d09b9c6-cef0-4fe6-8a31-97c3b69af924WIN_20221116_14_46_38_Pro.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\30e80ebd-0080-44f7-bd07-21e551f2ce09download (1).webp))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ahu.API</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ahu.API</BasePath>
-      <RelativePath>Uploads/Files/30e80ebd-0080-44f7-bd07-21e551f2ce09download (1).webp</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\30e80ebd-0080-44f7-bd07-21e551f2ce09download (1).webp))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\837de116-2ecf-4340-9a7a-bccde836c174download.webp))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ahu.API</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ahu.API</BasePath>
-      <RelativePath>Uploads/Files/837de116-2ecf-4340-9a7a-bccde836c174download.webp</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\837de116-2ecf-4340-9a7a-bccde836c174download.webp))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\9c9815ac-6f53-4e2a-b254-1fb05c9995e5WIN_20221116_14_46_38_Pro.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ahu.API</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ahu.API</BasePath>
-      <RelativePath>Uploads/Files/9c9815ac-6f53-4e2a-b254-1fb05c9995e5WIN_20221116_14_46_38_Pro.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\9c9815ac-6f53-4e2a-b254-1fb05c9995e5WIN_20221116_14_46_38_Pro.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\cb119417-3a21-4027-8c3f-5d8171115117download.webp))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ahu.API</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ahu.API</BasePath>
-      <RelativePath>Uploads/Files/cb119417-3a21-4027-8c3f-5d8171115117download.webp</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\cb119417-3a21-4027-8c3f-5d8171115117download.webp))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\download.webp))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ahu.API</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ahu.API</BasePath>
-      <RelativePath>Uploads/Files/download.webp</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\download.webp))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\ef7a42c7-c35e-4ec6-843c-50f7984f7effWIN_20221116_14_46_38_Pro.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>Ahu.API</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/Ahu.API</BasePath>
-      <RelativePath>Uploads/Files/ef7a42c7-c35e-4ec6-843c-50f7984f7effWIN_20221116_14_46_38_Pro.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Files\ef7a42c7-c35e-4ec6-843c-50f7984f7effWIN_20221116_14_46_38_Pro.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Sliders\def6926d-a7e6-468d-a1ca-ccb1bd9b2558download.webp))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>
