@@ -41,24 +41,24 @@ public class StoreDataService : IStoreDataService
 
     public void EditStoreData(StoreDataGetDto storeDataGetDto)
     {
-        var storeData = _storeDataRepository.GetFiltered(x => true);
+        List<StoreData> storeDatas = _storeDataRepository.GetFiltered(x => true).ToList();
 
-        if (storeData == null) 
+        if (storeDatas == null)
             throw new RestException(System.Net.HttpStatusCode.NotFound, "Store Data not found");
 
         var dtoProperties = storeDataGetDto.GetType().GetProperties();
-        var entityProperties = storeData.GetType().GetProperties();
+        var storeDataProperties = storeDatas.GetType().GetProperties();
 
         foreach (var dtoProperty in dtoProperties)
         {
-            var entityProperty = entityProperties.FirstOrDefault(p => p.Name == dtoProperty.Name);
+            var entityProperty = storeDataProperties.FirstOrDefault(p => p.Name == dtoProperty.Name);
 
             if (entityProperty != null)
             {
                 var dtoValue = dtoProperty.GetValue(storeDataGetDto);
                 if (dtoValue != null)
                 {
-                    entityProperty.SetValue(storeData, dtoValue);
+                    entityProperty.SetValue(storeDatas, dtoValue);
                 }
             }
         }
@@ -69,24 +69,30 @@ public class StoreDataService : IStoreDataService
         if (oldLogoImgName != null)
             FileManager.Delete(rootPath, "uploads/store-datas", oldLogoImgName);
 
-        //if (storeDataGetDto.LogoImageFile != null)
-        //{
-        //    oldLogoImgName = storeData.LogoImageName;
-        //    storeData.LogoImageName = FileManager.Save(storeDataGetDto.LogoImageFile, rootPath, "uploads/store-datas");
-        //    storeData.LogoImageLink = "/uploads/store-datas/" + storeData.LogoImageName;
-        //}
+        foreach (var storeData in storeDatas)
+        {
+            if (storeDataGetDto.LogoImageFile != null)
+            {
+                oldLogoImgName = storeData.LogoImageName;
+                storeData.LogoImageName = FileManager.Save(storeDataGetDto.LogoImageFile, rootPath, "uploads/store-datas");
+                storeData.LogoImageLink = "/uploads/store-datas/" + storeData.LogoImageName;
+            }
+        }
 
         _storeDataRepository.SaveAsync();
     }
 
     public StoreDataGetDto GetStoreData()
     {
-        var storeData = _storeDataRepository.GetFiltered(x => true);
+        List<StoreData> storeDatas = _storeDataRepository.GetAll(x => true).ToList();
         string baseUrl = $"{_httpContextAccessor.HttpContext.Request.Scheme}://{_httpContextAccessor.HttpContext.Request.Host}";
 
-        //storeData.EmptyBasketImageLink = baseUrl + storeData.EmptyBasketImageLink;
-        //storeData.LogoImageLink = baseUrl + storeData.LogoImageLink;
+        foreach (var storeData in storeDatas)
+        {
+            storeData.EmptyBasketImageLink = baseUrl + storeData.EmptyBasketImageLink;
+            storeData.LogoImageLink = baseUrl + storeData.LogoImageLink;
+        }
 
-        return _mapper.Map<StoreDataGetDto>(storeData);
+        return _mapper.Map<StoreDataGetDto>(storeDatas);
     }
 }

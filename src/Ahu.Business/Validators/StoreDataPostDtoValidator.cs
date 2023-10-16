@@ -12,7 +12,7 @@ public class StoreDataPostDtoValidator : AbstractValidator<StoreDataPostDto>
             if (sd.LogoImageFile.Length > 2097152)
                 context.AddFailure(nameof(sd.LogoImageFile), "ImageFile must be less or equal than 2MB");
 
-            if (sd.LogoImageFile.ContentType != "image/jpeg" && sd.LogoImageFile.ContentType != "image/png" && sd.LogoImageFile.ContentType != "image/jpg")
+            if (sd.LogoImageFile.ContentType != "image/jpeg" && sd.LogoImageFile.ContentType != "image/png")
                 context.AddFailure(nameof(sd.LogoImageFile), "ImageFile must be image/jpeg or image/png");
         });
 
@@ -21,9 +21,8 @@ public class StoreDataPostDtoValidator : AbstractValidator<StoreDataPostDto>
             if (sd.EmptyBasketImageFile.Length > 2097152)
                 context.AddFailure(nameof(sd.EmptyBasketImageFile), "ImageFile must be less or equal than 2MB");
 
-            if (sd.EmptyBasketImageFile.ContentType != "image/jpeg" && sd.EmptyBasketImageFile.ContentType != "image/png" && sd.LogoImageFile.ContentType != "image/jpg")
+            if (sd.EmptyBasketImageFile.ContentType != "image/jpeg" && sd.EmptyBasketImageFile.ContentType != "image/png")
                 context.AddFailure(nameof(sd.EmptyBasketImageFile), "ImageFile must be image/jpeg or image/png");
         });
-
     }
 }

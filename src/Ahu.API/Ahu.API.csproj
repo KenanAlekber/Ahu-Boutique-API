@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\Uploads\Store-datas\" />
     <Folder Include="wwwroot\Uploads\Products\" />
     <Folder Include="wwwroot\Uploads\Sliders\" />
   </ItemGroup>

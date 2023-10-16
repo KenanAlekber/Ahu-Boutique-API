@@ -16,13 +16,13 @@ public static class ServiceRegistration
             options.UseSqlServer(configuration.GetConnectionString("Default"));
         });
 
-        services.AddScoped<IProductRepository, ProductRepository>();
-        services.AddScoped<IProductImageRepository, ProductImageRepository>();
+        services.AddScoped<IBasketRepository, BasketRepository>();
         services.AddScoped<IBrandRepository, BrandRepository>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();
-        services.AddScoped<ISliderRepository, SliderRepository>();
         services.AddScoped<IOrderRepository, OrderRepository>();
-        services.AddScoped<IBasketRepository, BasketRepository>();
+        services.AddScoped<IProductImageRepository, ProductImageRepository>();
+        services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<ISliderRepository, SliderRepository>();
         services.AddScoped<IStoreDataRepository, StoreDataRepository>();
 
         return services;
