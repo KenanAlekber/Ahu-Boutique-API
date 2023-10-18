@@ -14,15 +14,16 @@ public class JwtService
     {
         _configuration = configuration;
     }
+
     public string GenerateToken(AppUser user, IList<string> roles)
     {
         List<Claim> claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.NameIdentifier,user.Id),
-                new Claim(ClaimTypes.Name,user.UserName),
-                new Claim(ClaimTypes.Email,user.Email),
-                new Claim("FullName",user.FullName),
-            };
+        {
+            new Claim(ClaimTypes.NameIdentifier,user.Id),
+            new Claim(ClaimTypes.Name,user.UserName),
+            new Claim(ClaimTypes.Email,user.Email),
+            new Claim("FullName",user.FullName),
+        };
 
         claims.AddRange(roles.Select(x => new Claim(ClaimTypes.Role, x)).ToList());
 

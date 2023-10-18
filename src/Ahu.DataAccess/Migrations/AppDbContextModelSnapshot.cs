@@ -61,7 +61,7 @@ namespace Ahu.DataAccess.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BasketItems");
+                    b.ToTable("BasketItems", (string)null);
                 });
 
             modelBuilder.Entity("Ahu.Core.Entities.Brand", b =>
@@ -94,7 +94,7 @@ namespace Ahu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Brands");
+                    b.ToTable("Brands", (string)null);
                 });
 
             modelBuilder.Entity("Ahu.Core.Entities.Category", b =>
@@ -126,7 +126,7 @@ namespace Ahu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Ahu.Core.Entities.Identity.AppUser", b =>
@@ -195,7 +195,7 @@ namespace Ahu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AppUsers");
+                    b.ToTable("AppUsers", (string)null);
                 });
 
             modelBuilder.Entity("Ahu.Core.Entities.Order", b =>
@@ -262,7 +262,7 @@ namespace Ahu.DataAccess.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Ahu.Core.Entities.OrderItem", b =>
@@ -307,7 +307,7 @@ namespace Ahu.DataAccess.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("Ahu.Core.Entities.Product", b =>
@@ -376,7 +376,7 @@ namespace Ahu.DataAccess.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Ahu.Core.Entities.ProductImage", b =>
@@ -420,7 +420,7 @@ namespace Ahu.DataAccess.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImages");
+                    b.ToTable("ProductImages", (string)null);
                 });
 
             modelBuilder.Entity("Ahu.Core.Entities.Slider", b =>
@@ -465,7 +465,7 @@ namespace Ahu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sliders");
+                    b.ToTable("Sliders", (string)null);
                 });
 
             modelBuilder.Entity("Ahu.Core.Entities.StoreData", b =>
@@ -545,7 +545,7 @@ namespace Ahu.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("StoreDatas");
+                    b.ToTable("StoreDatas", (string)null);
                 });
 
             modelBuilder.Entity("Ahu.Core.Entities.BasketItem", b =>

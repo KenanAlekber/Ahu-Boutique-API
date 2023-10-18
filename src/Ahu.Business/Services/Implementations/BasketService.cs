@@ -18,7 +18,7 @@ public class BasketService : IBasketService
         _mapper = mapper;
     }
 
-    public List<BasketGetDto> GetAllBaskets(Guid userId)
+    public List<BasketGetDto> GetAllBaskets(string userId)
     {
         var baskets = _basketRepository.GetAll(b => b.UserId == userId.ToString(), "Product");
 
@@ -80,7 +80,7 @@ public class BasketService : IBasketService
         _basketRepository.SaveAsync();
     }
 
-    public void DeleteAllBaskets(Guid userId)
+    public void DeleteAllBaskets(string userId)
     {
         var baskets = _basketRepository.GetAll(x => x.UserId == userId.ToString(), "Product").ToList();
 

@@ -20,6 +20,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.UseDefaultFiles();
 app.UseRouting();
 app.UseStaticFiles();
@@ -33,8 +36,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
-
-app.UseAuthentication();
-app.UseAuthorization();
 
 app.Run();
