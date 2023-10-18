@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Ahu.Core/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "6.0.22",
+          "Microsoft.EntityFrameworkCore.Design": "6.0.23",
           "Microsoft.Extensions.Identity.Stores": "7.0.11"
         },
         "runtime": {
@@ -42,10 +42,10 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/6.0.22": {
+      "Microsoft.EntityFrameworkCore/6.0.23": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.22",
-          "Microsoft.EntityFrameworkCore.Analyzers": "6.0.22",
+          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.23",
+          "Microsoft.EntityFrameworkCore.Analyzers": "6.0.23",
           "Microsoft.Extensions.Caching.Memory": "6.0.1",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0",
@@ -54,41 +54,41 @@
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {
-            "assemblyVersion": "6.0.22.0",
-            "fileVersion": "6.0.2223.40907"
+            "assemblyVersion": "6.0.23.0",
+            "fileVersion": "6.0.2323.47715"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/6.0.22": {
+      "Microsoft.EntityFrameworkCore.Abstractions/6.0.23": {
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "assemblyVersion": "6.0.22.0",
-            "fileVersion": "6.0.2223.40907"
+            "assemblyVersion": "6.0.23.0",
+            "fileVersion": "6.0.2323.47715"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/6.0.22": {},
-      "Microsoft.EntityFrameworkCore.Design/6.0.22": {
+      "Microsoft.EntityFrameworkCore.Analyzers/6.0.23": {},
+      "Microsoft.EntityFrameworkCore.Design/6.0.23": {
         "dependencies": {
           "Humanizer.Core": "2.8.26",
-          "Microsoft.EntityFrameworkCore.Relational": "6.0.22"
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.23"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {
-            "assemblyVersion": "6.0.22.0",
-            "fileVersion": "6.0.2223.40907"
+            "assemblyVersion": "6.0.23.0",
+            "fileVersion": "6.0.2323.47715"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/6.0.22": {
+      "Microsoft.EntityFrameworkCore.Relational/6.0.23": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "6.0.22",
+          "Microsoft.EntityFrameworkCore": "6.0.23",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "assemblyVersion": "6.0.22.0",
-            "fileVersion": "6.0.2223.40907"
+            "assemblyVersion": "6.0.23.0",
+            "fileVersion": "6.0.2323.47715"
           }
         }
       },
@@ -267,40 +267,40 @@
       "path": "microsoft.aspnetcore.cryptography.keyderivation/7.0.11",
       "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.7.0.11.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore/6.0.22": {
+    "Microsoft.EntityFrameworkCore/6.0.23": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vNe+y8ZsEf1CsfmfYttfKAz/IgCCtphgguvao0HWNJNdjZf9cabD288nZJ17b/WaQMWXhLwYAsofk8vNVkfTOA==",
-      "path": "microsoft.entityframeworkcore/6.0.22",
-      "hashPath": "microsoft.entityframeworkcore.6.0.22.nupkg.sha512"
+      "sha512": "sha512-e6CXCicgvyCzeESxfK/kAkJnevnodJCX9Au/m1PMmM4hrDAx36FRJLQJ7lKzIu9Hvd1LzvAtUOJm6D4aIL636Q==",
+      "path": "microsoft.entityframeworkcore/6.0.23",
+      "hashPath": "microsoft.entityframeworkcore.6.0.23.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/6.0.22": {
+    "Microsoft.EntityFrameworkCore.Abstractions/6.0.23": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3ycEYrtWoa4kv5mUECU2LNBbWiYh345b1uQLvg4pHCEICXoJZ8Sfu/2yGloKiMNgMdDc02gFYCRHxsqQNZpnWA==",
-      "path": "microsoft.entityframeworkcore.abstractions/6.0.22",
-      "hashPath": "microsoft.entityframeworkcore.abstractions.6.0.22.nupkg.sha512"
+      "sha512": "sha512-KG9qxolttA+pwwBFb6dxf7qkkDZQLLa3yc4S7Fl/CTy/p0OVjjrmgrrBWlbwBUu2npBELCFz22XK/PdMGJmOaw==",
+      "path": "microsoft.entityframeworkcore.abstractions/6.0.23",
+      "hashPath": "microsoft.entityframeworkcore.abstractions.6.0.23.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/6.0.22": {
+    "Microsoft.EntityFrameworkCore.Analyzers/6.0.23": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-82SZfdrLe7bdDB8/3INV0UULvlUzsdHkrEYylDCrzFXRWHXG9eO5jJQjRHU8j9XkGIN+MSPgIlczBnqeDvB36A==",
-      "path": "microsoft.entityframeworkcore.analyzers/6.0.22",
-      "hashPath": "microsoft.entityframeworkcore.analyzers.6.0.22.nupkg.sha512"
+      "sha512": "sha512-v4G7tYmBK/GDNlFOKWvXJ0vt3e8LA/SZe/mKfDB4aN9V/7KsO7+tMSnQHALPB8Xu3PKZviC9kNWDosaIaMiRmw==",
+      "path": "microsoft.entityframeworkcore.analyzers/6.0.23",
+      "hashPath": "microsoft.entityframeworkcore.analyzers.6.0.23.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Design/6.0.22": {
+    "Microsoft.EntityFrameworkCore.Design/6.0.23": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-es9TKd0cpM263Ou0QMEETN7MDzD7kXDkThiiXl1+c/69v97AZlzeLoM5tDdC0RC4L74ZWyk3+WMnoDPL93DDyQ==",
-      "path": "microsoft.entityframeworkcore.design/6.0.22",
-      "hashPath": "microsoft.entityframeworkcore.design.6.0.22.nupkg.sha512"
+      "sha512": "sha512-TWyK4ymmvQefroVAlEmM+uzbvwQAo8XQ1AENAvsex10J595D33o+RLfvx74upYWx2QlBLGCOHR786T9KovAQqw==",
+      "path": "microsoft.entityframeworkcore.design/6.0.23",
+      "hashPath": "microsoft.entityframeworkcore.design.6.0.23.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Relational/6.0.22": {
+    "Microsoft.EntityFrameworkCore.Relational/6.0.23": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-W7yfdEbEuS1OPPxU0EOA6haqI4uvzs7OwHKh81DiJFn3NFNP2ztSovkOzBDhTwHX0j+OySsAj3BEJhuzTVYIVw==",
-      "path": "microsoft.entityframeworkcore.relational/6.0.22",
-      "hashPath": "microsoft.entityframeworkcore.relational.6.0.22.nupkg.sha512"
+      "sha512": "sha512-TUbGpISUoEKYc7JDwgrjcsNiJTB+6dfhJrU/q16JB9ChWh/CyH17AAvCI4+sgrp0TzjWjkJwskMycvvJSsXd8Q==",
+      "path": "microsoft.entityframeworkcore.relational/6.0.23",
+      "hashPath": "microsoft.entityframeworkcore.relational.6.0.23.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
       "type": "package",

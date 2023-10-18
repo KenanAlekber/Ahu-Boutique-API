@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "6bmY8JyVnLVvLTI0+o0YteFSk27/9yEB5gNR0eE0Swv3m2hu3DJIrHOSDQMDHrUnmjPzNV7rEg8atljMwq5L+A==",
+  "dgSpecHash": "XcEOlqgMjxJuifpFpzJmOXLwgOJg8o0sk6JVQ6F8m0SyrYwQxh61kr4oemD6cQUYiArhKtr4o6nfRMlt0sVYVg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.DataAccess\\Ahu.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.11\\microsoft.aspnetcore.cryptography.internal.7.0.11.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.11\\microsoft.aspnetcore.cryptography.keyderivation.7.0.11.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.22\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.22.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",

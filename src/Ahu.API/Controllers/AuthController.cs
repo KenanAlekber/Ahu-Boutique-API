@@ -1,5 +1,6 @@
 ﻿using Ahu.API.Services;
 using Ahu.Business.DTOs.UserDtos;
+using Ahu.Business.Exceptions;
 using Ahu.Business.Helper;
 using Ahu.Business.Services.Interfaces;
 using Ahu.Core.Entities.Identity;
@@ -15,18 +16,16 @@ public class AuthController : ControllerBase
 {
     private readonly SignInManager<AppUser> _signInManager;
     private readonly UserManager<AppUser> _userManager;
-    private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly RoleManager<IdentityRole> _roleManager;
     private readonly JwtService _jwtService;
     private readonly IEmailSender _emailSender;
     private readonly TokenEncoderDecoder _tokenEncDec;
     private readonly IConfiguration _configuration;
 
-    public AuthController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, IHttpContextAccessor httpContextAccessor, RoleManager<IdentityRole> roleManager, JwtService jwtService, IEmailSender emailSender, TokenEncoderDecoder tokenEncDec, IConfiguration configuration)
+    public AuthController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager, JwtService jwtService, IEmailSender emailSender, TokenEncoderDecoder tokenEncDec, IConfiguration configuration)
     {
         _signInManager = signInManager;
         _userManager = userManager;
-        _httpContextAccessor = httpContextAccessor;
         _roleManager = roleManager;
         _jwtService = jwtService;
         _emailSender = emailSender;
@@ -120,7 +119,7 @@ public class AuthController : ControllerBase
         if (_userManager.Users.Any(x => x.Email == registerDto.Email))
             return Conflict("Email is alredy taken");
 
-        var user = new AppUser
+        AppUser user = new AppUser
         {
             UserName = registerDto.Username,
             FullName = registerDto.Fullname,
@@ -131,21 +130,27 @@ public class AuthController : ControllerBase
         };
 
         var result = await _userManager.CreateAsync(user, registerDto.Password);
-        if (result.Succeeded)
+        if (!result.Succeeded)
         {
-            await _userManager.AddToRoleAsync(user, "Member");
-            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            List<RestExceptionError> errors = new List<RestExceptionError>();
 
-            string encodedToken = _tokenEncDec.EncodeToken(token);
-            var reactAppUrl = _configuration["FrontUrl:BaseUrl"] + $"confirm-email?token={encodedToken}&email={user.Email}";
+            foreach (var resultError in result.Errors)
+            {
+                RestExceptionError error = new RestExceptionError("Error", resultError.Description);
+                errors.Add(error);
+            }
+            RestException exceptionError = new RestException(System.Net.HttpStatusCode.BadRequest, errors);
 
-            _emailSender.Send(user.Email, "Email Confirme", $"Click <a href=\"{reactAppUrl}\">here</a> to verification your email");
-
+            return NotFound(exceptionError);
         }
-        else
-        {
-            return NotFound();
-        }
+        await _userManager.AddToRoleAsync(user, "Member");
+
+        var roles = await _userManager.GetRolesAsync(user);
+        var token =  _jwtService.GenerateToken(user,roles);
+        string encodedToken = _tokenEncDec.EncodeToken(token);
+        var reactAppUrl = _configuration["FrontUrl:BaseUrl"] + $"confirm-email?token={encodedToken}&email={user.Email}";
+
+        _emailSender.Send(user.Email, "Email Confirme", $"Click <a href=\"{reactAppUrl}\">here</a> to verification your email");
 
         return Ok();
     }
@@ -179,12 +184,12 @@ public class AuthController : ControllerBase
     {
         AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
 
-        if (!await _userManager.CheckPasswordAsync(user, passwordDto.Password)) 
+        if (!await _userManager.CheckPasswordAsync(user, passwordDto.Password))
             return BadRequest();
 
         var newPass = await _userManager.ChangePasswordAsync(user, passwordDto.Password, passwordDto.NewPassword);
 
-        if (!newPass.Succeeded) 
+        if (!newPass.Succeeded)
             return BadRequest("test");
 
         return Ok();
@@ -222,7 +227,6 @@ public class AuthController : ControllerBase
 
         if (!user.IsAdmin)
             return Unauthorized();
-
 
         if (!await _userManager.CheckPasswordAsync(user, loginDto.Password))
             return Unauthorized();

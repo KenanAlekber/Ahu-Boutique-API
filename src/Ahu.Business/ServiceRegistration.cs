@@ -1,4 +1,6 @@
-﻿using Ahu.Business.MappingProfiles;
+﻿using Ahu.API.Services;
+using Ahu.Business.Helper;
+using Ahu.Business.MappingProfiles;
 using Ahu.Business.Services.Implementations;
 using Ahu.Business.Services.Interfaces;
 using Ahu.Business.Validators;
@@ -40,6 +42,8 @@ public static class ServiceRegistration
         services.AddScoped<IOrderService, OrderService>();
         services.AddScoped<IStoreDataService, StoreDataService>();
         services.AddScoped<IEmailSender, EmailSender>();
+        services.AddScoped<JwtService>();
+        services.AddScoped<TokenEncoderDecoder>();
 
         services.AddFluentValidation(p => p.RegisterValidatorsFromAssembly(typeof(ProductPostDtoValidator).Assembly));
 

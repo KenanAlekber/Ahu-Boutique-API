@@ -44,6 +44,23 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.22": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.22",
+          "Microsoft.Extensions.Identity.Stores": "6.0.22"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "compile": {
@@ -937,6 +954,21 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.xml",
         "microsoft.aspnetcore.cryptography.keyderivation.7.0.11.nupkg.sha512",
         "microsoft.aspnetcore.cryptography.keyderivation.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.22": {
+      "sha512": "HW9cR01A9LXSpsZygEaeMKjM1WNeCtwPa4jW1oNOBhAaCqf96X5dWoAOgSf/4fAoCdMnphnTnQLwv2bwVnJGkg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.identity.entityframeworkcore/6.0.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml",
+        "microsoft.aspnetcore.identity.entityframeworkcore.6.0.22.nupkg.sha512",
+        "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
       ]
     },
     "Microsoft.CSharp/4.5.0": {
@@ -2330,6 +2362,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Ahu.Core >= 1.0.0",
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.22",
       "Microsoft.EntityFrameworkCore >= 6.0.22",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.22",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.22"
@@ -2383,6 +2416,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.22, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.22, )"

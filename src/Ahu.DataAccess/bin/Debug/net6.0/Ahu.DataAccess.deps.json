@@ -9,6 +9,7 @@
       "Ahu.DataAccess/1.0.0": {
         "dependencies": {
           "Ahu.Core": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.22",
           "Microsoft.EntityFrameworkCore": "6.0.22",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.22",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.22"
@@ -41,6 +42,18 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.1123.42502"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.22": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.22",
+          "Microsoft.Extensions.Identity.Stores": "7.0.11"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
+            "assemblyVersion": "6.0.22.0",
+            "fileVersion": "6.0.2223.42415"
           }
         }
       },
@@ -571,6 +584,13 @@
       "sha512": "sha512-ZcE9XZBA8GZhvYyRJvEv/6FKjPMpNlZeKdMNO55Wbmwb6ysjRlHhFDdWKg+6I36J442nBLllHCtxGtBuud9WWg==",
       "path": "microsoft.aspnetcore.cryptography.keyderivation/7.0.11",
       "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.7.0.11.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HW9cR01A9LXSpsZygEaeMKjM1WNeCtwPa4jW1oNOBhAaCqf96X5dWoAOgSf/4fAoCdMnphnTnQLwv2bwVnJGkg==",
+      "path": "microsoft.aspnetcore.identity.entityframeworkcore/6.0.22",
+      "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.6.0.22.nupkg.sha512"
     },
     "Microsoft.CSharp/4.5.0": {
       "type": "package",

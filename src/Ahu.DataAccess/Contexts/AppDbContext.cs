@@ -2,11 +2,12 @@
 using Ahu.Core.Entities.Common;
 using Ahu.Core.Entities.Identity;
 using Ahu.DataAccess.Configurations;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ahu.DataAccess.Contexts;
 
-public class AppDbContext : DbContext   
+public class AppDbContext : IdentityDbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
@@ -26,7 +27,7 @@ public class AppDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProductConfiguration).Assembly);
-        modelBuilder.Entity<AppUser>().HasQueryFilter(u => !u.IsDeleted);
+        modelBuilder.Entity<AppUser>();
         modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDeleted);
         modelBuilder.Entity<ProductImage>().HasQueryFilter(pi => !pi.IsDeleted);
         modelBuilder.Entity<Brand>().HasQueryFilter(b => !b.IsDeleted);
