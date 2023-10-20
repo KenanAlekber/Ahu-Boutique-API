@@ -54,8 +54,8 @@ builder.Services.AddSwaggerGen(c =>
         Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
     });
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
-  {
     {
+        {
            new OpenApiSecurityScheme
            {
                  Reference = new OpenApiReference
@@ -65,11 +65,16 @@ builder.Services.AddSwaggerGen(c =>
                  }
            },
              new string[] {}
-    }
-  });
+        }
+    });
 });
 
+//builder.Services.AddAuthorization();
+
 var app = builder.Build();
+
+app.UseStaticFiles();
+app.UseRouting();
 
 if (app.Environment.IsDevelopment())
 {
@@ -77,19 +82,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseAuthentication();
-app.UseAuthorization();
+app.UseHttpsRedirection();
 
 app.UseDefaultFiles();
-app.UseRouting();
-app.UseStaticFiles();
-
-app.UseHttpsRedirection();
 
 app.AddExcepitonHandler();
 
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.UseMiddleware<ErrorHandlingMiddleware>();

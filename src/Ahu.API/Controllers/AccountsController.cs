@@ -32,7 +32,7 @@ public class AccountsController : ControllerBase
 
         AppUser user = await _userManager.FindByNameAsync(userName);
 
-        if (user == null) 
+        if (user is null) 
             return NotFound();
 
         if (user.EmailConfirmed == true) 
@@ -51,18 +51,16 @@ public class AccountsController : ControllerBase
 
     [HttpPost("confirmemail")]
     [Authorize]
-    public async Task<IActionResult> ConfirmEmail(ConfirmEmailDto dto)
+    public async Task<IActionResult> ConfirmEmail(ConfirmEmailDto confirmEmailDto)
     {
-        string token = _tokenEncDec.DecodeToken(dto.Token);
+        string token = _tokenEncDec.DecodeToken(confirmEmailDto.Token);
 
-        if (string.IsNullOrWhiteSpace(token) || string.IsNullOrWhiteSpace(dto.Email))
-        {
+        if (string.IsNullOrWhiteSpace(token) || string.IsNullOrWhiteSpace(confirmEmailDto.Email))
             return BadRequest("Token and email are required.");
-        }
 
-        var user = await _userManager.FindByEmailAsync(dto.Email);
-        if (user == null)
-            return NotFound("User not found.");
+        var user = await _userManager.FindByEmailAsync(confirmEmailDto.Email);
+
+        if (user is null) return NotFound("User not found.");
 
         var result = await _userManager.ConfirmEmailAsync(user, token);
 
@@ -74,7 +72,7 @@ public class AccountsController : ControllerBase
     {
         AppUser user = await _userManager.FindByEmailAsync(passwordDto.Email);
 
-        if (user == null || user.IsAdmin) 
+        if (user is null || user.IsAdmin) 
             return BadRequest("Email is not correct");
 
         string token = await _userManager.GeneratePasswordResetTokenAsync(user);
@@ -96,7 +94,7 @@ public class AccountsController : ControllerBase
             return BadRequest("Token and email are required.");
 
         var user = await _userManager.FindByEmailAsync(email);
-        if (user == null)
+        if (user is null)
             return NotFound("User not found.");
 
         var result = await _userManager.VerifyUserTokenAsync(user, _userManager.Options.Tokens.PasswordResetTokenProvider, "ResetPassword", token);
@@ -110,24 +108,24 @@ public class AccountsController : ControllerBase
         return BadRequest("error");
     }
 
-    [HttpPost("ResetPasswordChange")]
-    public async Task<IActionResult> ResetPassword(ResetPasswordPostDto dto)
-    {
-        string token = _tokenEncDec.DecodeToken(dto.Token);
+    //[HttpPost("ResetPasswordChange")]
+    //public async Task<IActionResult> ResetPassword(ResetPasswordPostDto resetPassword)
+    //{
+    //    string token = _tokenEncDec.DecodeToken(resetPassword.Token);
 
-        if (dto.Password != dto.ConfirmPassword) 
-            return BadRequest("Password is don't match");
+    //    if (resetPassword.Password != resetPassword.ConfirmPassword) 
+    //        return BadRequest("Password is don't match");
 
-        var user = await _userManager.FindByEmailAsync(dto.Email);
+    //    var user = await _userManager.FindByEmailAsync(resetPassword.Email);
 
-        if (user == null || user.IsAdmin)
-            return BadRequest("Email is not correct");
+    //    if (user is null || user.IsAdmin)
+    //        return BadRequest("Email is not correct");
 
-        var result = await _userManager.ResetPasswordAsync(user, token, dto.Password);
+    //    var result = await _userManager.ResetPasswordAsync(user, token, resetPassword.Password);
 
-        if (!result.Succeeded)
-            return BadRequest("Password reset failed");
+    //    if (!result.Succeeded)
+    //        return BadRequest("Password reset failed");
 
-        return Ok("Password reset successful");
-    }
+    //    return Ok("Password reset successful");
+    //}
 }

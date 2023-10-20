@@ -32,7 +32,8 @@ public static class ServiceRegistration
             options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
             options.Lockout.AllowedForNewUsers = false;
 
-        }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders().AddTokenProvider<DataProtectorTokenProvider<AppUser>>("twofactor");
+        }).AddDefaultTokenProviders().AddTokenProvider<DataProtectorTokenProvider<AppUser>>("twofactor").AddEntityFrameworkStores<AppDbContext>();
+
 
         services.AddScoped<IBasketService, BasketService>();
         services.AddScoped<IBrandService, BrandService>();

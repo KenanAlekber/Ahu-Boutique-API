@@ -20,9 +20,7 @@ public class TokenEncoderDecoder
         encodedToken = encodedToken.Replace('-', '+').Replace('_', '/');
 
         while (encodedToken.Length % 4 != 0)
-        {
             encodedToken += '=';
-        }
 
         byte[] tokenBytes = Convert.FromBase64String(encodedToken);
 

@@ -33,13 +33,11 @@ public class AuthController : ControllerBase
         _configuration = configuration;
     }
 
-    [HttpGet("UserData")]
-    [Authorize]
-    public async Task<IActionResult> Get()
+    [HttpGet("UserData/{id}")]
+    //[Authorize(Roles = "Admin")]
+    public async Task<IActionResult> Get(string id)
     {
-        string userName = User.Identity.Name;
-
-        AppUser user = await _userManager.FindByNameAsync(userName);
+        AppUser user = await _userManager.FindByIdAsync(id);
 
         if (user is null)
             return NotFound();
@@ -58,7 +56,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    [Authorize]
+    //[Authorize(Roles = "Admin")]
     public async Task<IActionResult> GetById(string id)
     {
         AppUser user = await _userManager.FindByIdAsync(id);
@@ -80,7 +78,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet("AllUsers")]
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public IActionResult GetAllUsers()
     {
         var users = _userManager.Users;
@@ -146,7 +144,7 @@ public class AuthController : ControllerBase
         await _userManager.AddToRoleAsync(user, "Member");
 
         var roles = await _userManager.GetRolesAsync(user);
-        var token =  _jwtService.GenerateToken(user,roles);
+        var token = _jwtService.GenerateToken(user, roles);
         string encodedToken = _tokenEncDec.EncodeToken(token);
         var reactAppUrl = _configuration["FrontUrl:BaseUrl"] + $"confirm-email?token={encodedToken}&email={user.Email}";
 
@@ -155,11 +153,11 @@ public class AuthController : ControllerBase
         return Ok();
     }
 
-    [HttpPut("UserEdit")]
-    [Authorize]
-    public async Task<IActionResult> Edit(UserPutDto userPutDto)
+    [HttpPut("UserEdit/{id}")]
+    //[Authorize]
+    public async Task<IActionResult> Edit(UserPutDto userPutDto, string id)
     {
-        AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
+        AppUser user = await _userManager.FindByIdAsync(id);
 
         user.FullName = userPutDto.FullName;
         user.Email = userPutDto.Email;
@@ -179,10 +177,10 @@ public class AuthController : ControllerBase
     }
 
     [HttpPut("ChangePassword")]
-    [Authorize]
-    public async Task<IActionResult> ChangePassword(ChangePasswordDto passwordDto)
+    //[Authorize]
+    public async Task<IActionResult> ChangePassword(ChangePasswordDto passwordDto, string id)
     {
-        AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
+        AppUser user = await _userManager.FindByIdAsync(id);
 
         if (!await _userManager.CheckPasswordAsync(user, passwordDto.Password))
             return BadRequest();
@@ -211,7 +209,7 @@ public class AuthController : ControllerBase
         var responseData = new
         {
             token = _jwtService.GenerateToken(user, roles),
-            userId = user.Id
+            user
         };
 
         return Ok(responseData);
@@ -236,7 +234,7 @@ public class AuthController : ControllerBase
         var responseData = new
         {
             token = _jwtService.GenerateToken(user, roles),
-            userId = user.Id
+            user
         };
 
         return Ok(responseData);
@@ -251,7 +249,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpDelete("{email}")]
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public async Task<IActionResult> Delete(string email)
     {
         var user = await _userManager.FindByEmailAsync(email);
@@ -263,6 +261,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet("Role")]
+    //[Authorize(Roles = "Admin")]
     public async Task<IActionResult> CreateRole()
     {
         await _roleManager.CreateAsync(new IdentityRole("Member"));
@@ -272,20 +271,38 @@ public class AuthController : ControllerBase
         return Ok();
     }
 
-    [HttpGet("CreateAdmin")]
-    public async Task<IActionResult> CreateAdmin()
+    [HttpGet("CreateModerator")]
+    //[Authorize(Roles = "Admin")]
+    public async Task<IActionResult> CreateModerator()
     {
         var user = new AppUser
         {
-            UserName = "Admin",
-            FullName = "Kenan Alekber",
-            Email = "admin@gmail.com",
+            UserName = "Moderator",
+            FullName = "Moderator",
+            Email = "moderator@gmail.com",
             IsAdmin = true
         };
 
-        await _userManager.CreateAsync(user, "Admin123");
-        await _userManager.AddToRoleAsync(user, "Admin");
+        await _userManager.CreateAsync(user, "Moderator123!");
+        await _userManager.AddToRoleAsync(user, "Moderator");
 
         return Ok();
     }
+
+    //[HttpGet("CreateAdmin")]
+    //public async Task<IActionResult> CreateAdmin()
+    //{
+    //    var user = new AppUser
+    //    {
+    //        UserName = "Admin",
+    //        FullName = "Admin Admmin",
+    //        Email = "admin@gmail.com",
+    //        IsAdmin = true
+    //    };
+
+    //    await _userManager.CreateAsync(user, "Admin123!");
+    //    await _userManager.AddToRoleAsync(user, "Admin");
+
+    //    return Ok();
+    //}
 }
