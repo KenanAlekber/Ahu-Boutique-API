@@ -1,11 +1,15 @@
-﻿using Ahu.Business.DTOs.StoreDataDtos;
+﻿using Ahu.Business.DTOs.ProductDtos;
+using Ahu.Business.DTOs.StoreDataDtos;
 using Ahu.Business.Exceptions;
 using Ahu.Business.Helpers;
 using Ahu.Business.Services.Interfaces;
 using Ahu.Core.Entities;
+using Ahu.DataAccess.Repositories.Implementations;
 using Ahu.DataAccess.Repositories.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ahu.Business.Services.Implementations;
 
@@ -20,6 +24,31 @@ public class StoreDataService : IStoreDataService
         _storeDataRepository = storeDataRepository;
         _mapper = mapper;
         _httpContextAccessor = httpContextAccessor;
+    }
+
+    public async Task<List<StoreDataGetDto>> GetStoreData()
+    {
+        List<StoreData> storeDatas = await _storeDataRepository.GetFiltered(sd => true).ToListAsync();
+        List<StoreDataGetDto> storeDataGetDtos = null;
+
+        string baseUrl = $"{_httpContextAccessor.HttpContext.Request.Scheme}://{_httpContextAccessor.HttpContext.Request.Host}";
+
+        try
+        {
+            storeDataGetDtos = _mapper.Map<List<StoreDataGetDto>>(storeDatas);
+
+            foreach (var storeData in storeDatas)
+            {
+                storeData.EmptyBasketImageLink = baseUrl + storeData.EmptyBasketImageLink;
+                storeData.LogoImageLink = baseUrl + storeData.LogoImageLink;
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+
+        return storeDataGetDtos;
     }
 
     public async Task<Guid> CreateStoreData(StoreDataPostDto storeDataPost)
@@ -80,19 +109,5 @@ public class StoreDataService : IStoreDataService
         }
 
         _storeDataRepository.SaveAsync();
-    }
-
-    public StoreDataGetDto GetStoreData()
-    {
-        List<StoreData> storeDatas = _storeDataRepository.GetAll(x => true).ToList();
-        string baseUrl = $"{_httpContextAccessor.HttpContext.Request.Scheme}://{_httpContextAccessor.HttpContext.Request.Host}";
-
-        foreach (var storeData in storeDatas)
-        {
-            storeData.EmptyBasketImageLink = baseUrl + storeData.EmptyBasketImageLink;
-            storeData.LogoImageLink = baseUrl + storeData.LogoImageLink;
-        }
-
-        return _mapper.Map<StoreDataGetDto>(storeDatas);
     }
 }

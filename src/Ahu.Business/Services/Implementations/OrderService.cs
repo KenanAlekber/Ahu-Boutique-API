@@ -22,7 +22,7 @@ public class OrderService : IOrderService
 
     public async Task<List<OrderGetDto>> GetAllOrdersAsync()
     {
-        var orders = await _orderRepository.GetFiltered(p => true).ToListAsync();
+        List<Order> orders = await _orderRepository.GetFiltered(p => true).ToListAsync();
         List<OrderGetDto> orderGetDtos = null;
 
         try

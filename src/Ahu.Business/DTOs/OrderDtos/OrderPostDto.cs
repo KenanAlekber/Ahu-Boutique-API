@@ -1,10 +1,7 @@
-﻿using System.Text.Json.Serialization;
-
-namespace Ahu.Business.DTOs.OrderDtos;
+﻿namespace Ahu.Business.DTOs.OrderDtos;
 
 public class OrderPostDto
 {
-    [JsonIgnore]
     public string? UserId { get; set; }
     public string FullName { get; set; }
     public string Phone { get; set; }

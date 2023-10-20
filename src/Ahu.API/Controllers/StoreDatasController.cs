@@ -17,20 +17,20 @@ public class StoreDatasController : ControllerBase
     }
 
     [HttpPost("")]
-    [Authorize(Roles = "Admin")]
-    public IActionResult CreateStoreData([FromForm] StoreDataPostDto storeDataPostDto)
+    //[Authorize(Roles = "Admin")]
+    public async Task<IActionResult> CreateStoreData([FromForm] StoreDataPostDto storeDataPostDto)
     {
-        return StatusCode(201, _dataService.CreateStoreData(storeDataPostDto));
+        return StatusCode(201, await _dataService.CreateStoreData(storeDataPostDto));
     }
 
     [HttpGet("Get")]
-    public IActionResult GetStoreData()
+    public async Task<IActionResult> GetStoreData()
     {
-        return StatusCode(201, _dataService.GetStoreData());
+        return StatusCode(201, await _dataService.GetStoreData());
     }
 
-    [HttpPut("Edit")]
-    [Authorize(Roles = "Admin")]
+    [HttpPut("Edit/{id}")]
+    //[Authorize(Roles = "Admin")]
     public IActionResult EditStoreData([FromForm] StoreDataPutDto storeDataPutDto)
     {
         _dataService.EditStoreData(storeDataPutDto);

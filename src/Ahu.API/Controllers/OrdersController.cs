@@ -27,33 +27,33 @@ public class OrdersController : ControllerBase
     }
 
     [HttpPost("CreateOrder")]
-    public async Task<IActionResult> Create(OrderPostDto orderPostDto)
+    public async Task<IActionResult> CreateOrder([FromForm] OrderPostDto orderPostDto)
     {
         if (User.Identity.IsAuthenticated)
         {
             AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
 
-            if (user != null)
+            if (user is not null)
                 orderPostDto.UserId = user.Id;
         }
 
-        var order = _orderService.CreateOrderAsync(orderPostDto);
+        var order = await _orderService.CreateOrderAsync(orderPostDto);
 
         if (order != null)
-            _emailSender.Send(orderPostDto.Email, "Order Is Pending...", $"Dear {orderPostDto.FullName}  Your order is pending, you will be notified after it is confirmed by the admins. Thank you for choosing us!");
+            _emailSender.Send(orderPostDto.Email, "Order Is Pending...", $"Dear {orderPostDto.FullName} Your order is pending, you will be notified after it is confirmed by the admins. Thank you for choosing us!");
 
         return StatusCode(201, order);
     }
 
     [HttpGet("All")]
-    [Authorize(Roles = "Admin")]
-    public IActionResult GetAllOrders()
+    //[Authorize(Roles = "Admin")]
+    public async Task<IActionResult> GetAllOrders()
     {
-        return Ok(_orderService.GetAllOrdersAsync);
+        return Ok(await _orderService.GetAllOrdersAsync());
     }
 
     [HttpGet("{id}")]
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public ActionResult<CategoryGetDto> GetOrderById(Guid id)
     {
         return Ok(_orderService.GetOrderByIdAsync(id));
