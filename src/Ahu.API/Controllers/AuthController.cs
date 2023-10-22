@@ -78,6 +78,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet("AllUsers")]
+    //[Authorize(AuthenticationSchemes = "Bearer")]
     //[Authorize(Roles = "Admin")]
     public IActionResult GetAllUsers()
     {
@@ -249,7 +250,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpDelete("{email}")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Delete(string email)
     {
         var user = await _userManager.FindByEmailAsync(email);
@@ -261,7 +262,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet("Role")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> CreateRole()
     {
         await _roleManager.CreateAsync(new IdentityRole("Member"));
@@ -272,7 +273,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet("CreateModerator")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> CreateModerator()
     {
         var user = new AppUser

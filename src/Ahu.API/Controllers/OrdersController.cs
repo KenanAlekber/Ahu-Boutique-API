@@ -54,10 +54,12 @@ public class OrdersController : ControllerBase
 
     [HttpGet("{id}")]
     //[Authorize(Roles = "Admin")]
-    public ActionResult<CategoryGetDto> GetOrderById(Guid id)
+    public async Task<IActionResult> GetOrderByIdAsync(Guid id)
     {
-        return Ok(_orderService.GetOrderByIdAsync(id));
+        return Ok(await _orderService.GetOrderByIdAsync(id));
     }
+
+
 
     //[HttpDelete("{id}")]
     //[Authorize(Roles = "Admin")]
@@ -66,7 +68,6 @@ public class OrdersController : ControllerBase
     //    _orderService.Delete(id);
     //    return NoContent();
     //}
-
 
     //[HttpPut("Edit")]
     //[Authorize(Roles = "Admin")]

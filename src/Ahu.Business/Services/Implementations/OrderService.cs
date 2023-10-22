@@ -43,7 +43,7 @@ public class OrderService : IOrderService
 
     public async Task<OrderGetDto> GetOrderByIdAsync(Guid id)
     {
-        var order = await _orderRepository.GetSingleAsync(c => c.Id == id, "Product");
+        var order = await _orderRepository.GetSingleAsync(c => c.Id == id);
 
         if (order == null)
             throw new OrderNotFoundException($"Order is not found by id: {id}");
