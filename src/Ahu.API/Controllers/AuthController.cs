@@ -78,8 +78,8 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet("AllUsers")]
-    //[Authorize(AuthenticationSchemes = "Bearer")]
     //[Authorize(Roles = "Admin")]
+    //[Authorize(AuthenticationSchemes = "Bearer")]
     public IActionResult GetAllUsers()
     {
         var users = _userManager.Users;

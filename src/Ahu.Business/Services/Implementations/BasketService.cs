@@ -20,15 +20,14 @@ public class BasketService : IBasketService
 
     public List<BasketGetDto> GetAllBaskets(string userId)
     {
-        var baskets = _basketRepository.GetAll(b => b.UserId == userId.ToString(), "Product");
+        var baskets = _basketRepository.GetAll(b => b.UserId == userId.ToString());
 
         return _mapper.Map<List<BasketGetDto>>(baskets);
     }
 
     public async void AddToBasket(BasketPostDto basketPostDto)
     {
-        BasketItem basket = await _basketRepository.GetSingleAsync(b => b.ProductId == basketPostDto.ProductId && b.UserId == basketPostDto.UserId.ToString(),
-            "Product");
+        BasketItem basket = await _basketRepository.GetSingleAsync(b => b.ProductId == basketPostDto.ProductId && b.UserId == basketPostDto.UserId.ToString());
 
         if (basket is not null)
         {
@@ -49,7 +48,7 @@ public class BasketService : IBasketService
     {
         List<RestExceptionError> errors = new List<RestExceptionError>();
 
-        BasketItem basket = await _basketRepository.GetSingleAsync(x => x.ProductId == basketPostDto.ProductId && x.UserId == basketPostDto.UserId.ToString(), "Product");
+        BasketItem basket = await _basketRepository.GetSingleAsync(x => x.ProductId == basketPostDto.ProductId && x.UserId == basketPostDto.UserId.ToString());
 
         if (basket == null)
             errors.Add(new RestExceptionError("ProductId", "ProductId is not correct"));
@@ -69,20 +68,20 @@ public class BasketService : IBasketService
         _basketRepository.SaveAsync();
     }
 
-    public void DeleteBasket(Guid id)
-    {
-        BasketItem basket = (BasketItem)_basketRepository.GetFiltered(x => x.ProductId == id, "Product");
+    //public void DeleteBasket(Guid id)
+    //{
+    //    BasketItem basket = (BasketItem)_basketRepository.GetFiltered(x => x.ProductId == id);
 
-        if (basket is null)
-            throw new RestException(System.Net.HttpStatusCode.NotFound, "Item not found");
+    //    if (basket is null)
+    //        throw new RestException(System.Net.HttpStatusCode.NotFound, "Item not found");
 
-        _basketRepository.Delete(basket);
-        _basketRepository.SaveAsync();
-    }
+    //    _basketRepository.Delete(basket);
+    //    _basketRepository.SaveAsync();
+    //}
 
     public void DeleteAllBaskets(string userId)
     {
-        var baskets = _basketRepository.GetAll(x => x.UserId == userId.ToString(), "Product").ToList();
+        var baskets = _basketRepository.GetAll(x => x.UserId == userId.ToString()).ToList();
 
         if (baskets is null)
             throw new RestException(System.Net.HttpStatusCode.NotFound, "Item not found");

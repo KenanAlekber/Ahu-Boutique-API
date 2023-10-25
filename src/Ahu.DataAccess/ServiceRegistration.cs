@@ -24,6 +24,7 @@ public static class ServiceRegistration
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<ISliderRepository, SliderRepository>();
         services.AddScoped<IStoreDataRepository, StoreDataRepository>();
+        services.AddScoped<IProductReviewRepository, ProductReviewRepository>();
 
         return services;
     }

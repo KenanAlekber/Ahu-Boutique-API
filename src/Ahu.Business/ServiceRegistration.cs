@@ -43,6 +43,7 @@ public static class ServiceRegistration
         services.AddScoped<IOrderService, OrderService>();
         services.AddScoped<IStoreDataService, StoreDataService>();
         services.AddScoped<IEmailSender, EmailSender>();
+        services.AddScoped<IProductReviewService, ProductReviewService>();
         services.AddScoped<JwtService>();
         services.AddScoped<TokenEncoderDecoder>();
 

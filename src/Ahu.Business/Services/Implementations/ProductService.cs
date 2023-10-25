@@ -24,7 +24,7 @@ public class ProductService : IProductService
 
     public async Task<List<ProductGetDto>> GetAllProductsAsync()
     {
-        List<Product> products = await _productRepository.GetFiltered(p => true).ToListAsync();
+        List<Product> products = await _productRepository.GetFiltered(p => true,"Brand","Category").ToListAsync();
         List<ProductGetDto> productDtos = null;
 
         try
@@ -76,6 +76,7 @@ public class ProductService : IProductService
         await _productRepository.SaveAsync();
 
         string rootPath = Directory.GetCurrentDirectory() + "/wwwroot";
+
         for (int idx = 0; idx < productPostDto.ImageFiles.Count(); idx++)
         {
             ProductImage img = new ProductImage();

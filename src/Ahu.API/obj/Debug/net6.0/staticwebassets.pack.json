@@ -1,6 +1,26 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Products\\2912e135-5ffc-47bb-b851-b37afd859fd1download.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Products\\2912e135-5ffc-47bb-b851-b37afd859fd1download.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Products\\5d8db837-89bd-4361-84c6-b2b6f295ae36download (1).webp",
+      "PackagePath": "staticwebassets\\Uploads\\Products\\5d8db837-89bd-4361-84c6-b2b6f295ae36download (1).webp"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Products\\8b336879-f0d5-4cba-b926-2f98fb7af8c0trend.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Products\\8b336879-f0d5-4cba-b926-2f98fb7af8c0trend.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Products\\f8518f96-ceb1-4841-b6bf-c7e9312fce9bear-oversized-shirts-4-2000-fcafe292784c44b896488ed6e7d97738.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Products\\f8518f96-ceb1-4841-b6bf-c7e9312fce9bear-oversized-shirts-4-2000-fcafe292784c44b896488ed6e7d97738.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Sliders\\11a0de3d-33e9-44db-b351-125c7f395b41title-843accb0-e.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\Sliders\\11a0de3d-33e9-44db-b351-125c7f395b41title-843accb0-e.jpg"
+    },
+    {
       "Id": "C:\\Users\\Dell\\Desktop\\CODE\\FINAL-PROJECT\\BackEnd\\AhuBoutique\\src\\Ahu.API\\wwwroot\\Uploads\\Sliders\\7b3cd987-fa02-4fff-b5fd-50125c1f8534download (1).webp",
       "PackagePath": "staticwebassets\\Uploads\\Sliders\\7b3cd987-fa02-4fff-b5fd-50125c1f8534download (1).webp"
     },

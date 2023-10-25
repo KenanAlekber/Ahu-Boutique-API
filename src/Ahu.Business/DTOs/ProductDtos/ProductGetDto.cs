@@ -1,6 +1,5 @@
 ﻿namespace Ahu.Business.DTOs.ProductDtos;
 
-
 public class ProductGetDto
 {
     public Guid Id { get; set; }

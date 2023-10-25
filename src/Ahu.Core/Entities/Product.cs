@@ -17,5 +17,6 @@ public class Product : BaseSectionEntity
     public Guid CategoryId { get; set; }
     public Brand Brand { get; set; }
     public Guid BrandId { get; set; }
+    public List<ProductReview> ProductReviews { get; set; } = new List<ProductReview>();
     public List<ProductImage> ProductImages { get; set; } = new List<ProductImage>();
 }

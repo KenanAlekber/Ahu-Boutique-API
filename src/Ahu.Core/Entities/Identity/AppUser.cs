@@ -10,5 +10,6 @@ public class AppUser : IdentityUser
     public bool IsAdmin { get; set; }
     public ICollection<BasketItem> BasketItems { get; set; }
     public ICollection<Order> Orders { get; set; }
+    public ICollection<ProductReview> ProductReviews { get; set; }
     public bool IsDeleted { get; set; }
 }

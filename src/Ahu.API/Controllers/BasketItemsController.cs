@@ -40,12 +40,12 @@ public class BasketItemsController : ControllerBase
         return StatusCode(201);
     }
 
-    [HttpDelete("{id}")]
-    public IActionResult Delete(Guid id)
-    {
-        _basketService.DeleteBasket(id);
-        return NoContent();
-    }
+    //[HttpDelete("{id}")]
+    //public IActionResult Delete(Guid id)
+    //{
+    //    _basketService.DeleteBasket(id);
+    //    return NoContent();
+    //}
 
     [HttpDelete("deleteAll")]
     public async Task<IActionResult> Delete()

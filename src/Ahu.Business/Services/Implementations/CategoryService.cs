@@ -53,6 +53,7 @@ public class CategoryService : ICategoryService
 
         return categoryDto;
     }
+
     public async Task<Guid> CreateCategoryAsync(CategoryPostDto categoryPostDto)
     {
         Category category = _mapper.Map<Category>(categoryPostDto);

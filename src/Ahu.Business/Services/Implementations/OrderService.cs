@@ -1,4 +1,5 @@
 ﻿using Ahu.Business.DTOs.OrderDtos;
+using Ahu.Business.Exceptions;
 using Ahu.Business.Exceptions.OrderExceptions;
 using Ahu.Business.Exceptions.ProductExceptions;
 using Ahu.Business.Services.Interfaces;
@@ -62,4 +63,20 @@ public class OrderService : IOrderService
 
         return order.Id;
     }
+
+    //public void Edit(OrderPutDto orderPutDto)
+    //{
+    //    throw new NotImplementedException();
+    //}
+
+    //public void DeleteOrder(Guid id)
+    //{
+    //    var order = _orderRepository.GetFiltered(x => x.Id == id);
+
+    //    if (order is null)
+    //        throw new RestException(System.Net.HttpStatusCode.NotFound, "Entity not found");
+
+    //    _orderRepository.Delete(order);
+    //    _orderRepository.SaveAsync();
+    //}
 }

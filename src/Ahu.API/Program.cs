@@ -15,6 +15,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(option =>
+{
+    option.AddPolicy("AllowAllOrigin", builder =>
+    {
+        builder.AllowAnyHeader();
+        builder.AllowAnyMethod();
+        builder.AllowAnyOrigin();
+    });
+});
+
 builder.Services.AddAuthentication(option =>
 {
     option.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -42,8 +52,8 @@ builder.Services.AddSwaggerGen(c =>
             Name = "Elekberov Kenan",
             Email = "elekberovk442@gmail.com",
         },
-
     });
+
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
         Name = "Authorization",
@@ -53,6 +63,7 @@ builder.Services.AddSwaggerGen(c =>
         In = ParameterLocation.Header,
         Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
     });
+
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
@@ -69,11 +80,11 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-//builder.Services.AddAuthorization();
-
 var app = builder.Build();
 
+app.UseCors("AllowAllOrigin");
 app.UseStaticFiles();
+app.UseDefaultFiles();
 app.UseRouting();
 
 if (app.Environment.IsDevelopment())
@@ -84,12 +95,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseDefaultFiles();
-
 app.AddExcepitonHandler();
+
 
 app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.UseMiddleware<ErrorHandlingMiddleware>();

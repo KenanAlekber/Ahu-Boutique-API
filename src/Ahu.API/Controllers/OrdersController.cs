@@ -1,9 +1,7 @@
-﻿using Ahu.Business.DTOs.CategoryDtos;
-using Ahu.Business.DTOs.OrderDtos;
+﻿using Ahu.Business.DTOs.OrderDtos;
 using Ahu.Business.Services.Interfaces;
 using Ahu.Core.Entities.Identity;
 using Ahu.DataAccess.Repositories.Interfaces;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -39,7 +37,8 @@ public class OrdersController : ControllerBase
 
         var order = await _orderService.CreateOrderAsync(orderPostDto);
 
-        if (order != null)
+        if (
+            order != null)
             _emailSender.Send(orderPostDto.Email, "Order Is Pending...", $"Dear {orderPostDto.FullName} Your order is pending, you will be notified after it is confirmed by the admins. Thank you for choosing us!");
 
         return StatusCode(201, order);
@@ -59,13 +58,11 @@ public class OrdersController : ControllerBase
         return Ok(await _orderService.GetOrderByIdAsync(id));
     }
 
-
-
     //[HttpDelete("{id}")]
-    //[Authorize(Roles = "Admin")]
-    //public IActionResult Delete(int id)
+    ////[Authorize(Roles = "Admin")]
+    //public IActionResult Delete(Guid id)
     //{
-    //    _orderService.Delete(id);
+    //    _orderService.DeleteOrder(id);
     //    return NoContent();
     //}
 

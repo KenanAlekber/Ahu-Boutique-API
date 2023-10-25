@@ -354,6 +354,47 @@ namespace Ahu.DataAccess.Migrations
                     b.ToTable("ProductImages");
                 });
 
+            modelBuilder.Entity("Ahu.Core.Entities.ProductReview", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Answer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Date")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(2500)
+                        .HasColumnType("nvarchar(2500)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("ProductReviews");
+                });
+
             modelBuilder.Entity("Ahu.Core.Entities.Slider", b =>
                 {
                     b.Property<Guid>("Id")
@@ -784,6 +825,25 @@ namespace Ahu.DataAccess.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Ahu.Core.Entities.ProductReview", b =>
+                {
+                    b.HasOne("Ahu.Core.Entities.Product", "Product")
+                        .WithMany("ProductReviews")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Ahu.Core.Entities.Identity.AppUser", "User")
+                        .WithMany("ProductReviews")
+                        .HasForeignKey("UserId1")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -853,6 +913,8 @@ namespace Ahu.DataAccess.Migrations
             modelBuilder.Entity("Ahu.Core.Entities.Product", b =>
                 {
                     b.Navigation("ProductImages");
+
+                    b.Navigation("ProductReviews");
                 });
 
             modelBuilder.Entity("Ahu.Core.Entities.Identity.AppUser", b =>
@@ -860,6 +922,8 @@ namespace Ahu.DataAccess.Migrations
                     b.Navigation("BasketItems");
 
                     b.Navigation("Orders");
+
+                    b.Navigation("ProductReviews");
                 });
 #pragma warning restore 612, 618
         }
