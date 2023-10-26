@@ -68,27 +68,14 @@ public class BasketService : IBasketService
         _basketRepository.SaveAsync();
     }
 
-    //public void DeleteBasket(Guid id)
-    //{
-    //    BasketItem basket = (BasketItem)_basketRepository.GetFiltered(x => x.ProductId == id);
-
-    //    if (basket is null)
-    //        throw new RestException(System.Net.HttpStatusCode.NotFound, "Item not found");
-
-    //    _basketRepository.Delete(basket);
-    //    _basketRepository.SaveAsync();
-    //}
-
-    public void DeleteAllBaskets(string userId)
+    public void DeleteBasket(Guid id)
     {
-        var baskets = _basketRepository.GetAll(x => x.UserId == userId.ToString()).ToList();
+        BasketItem basket = _basketRepository.GetAll(x => true).FirstOrDefault(x => x.ProductId == id);
 
-        if (baskets is null)
+        if (basket is null)
             throw new RestException(System.Net.HttpStatusCode.NotFound, "Item not found");
 
-        foreach (var basket in baskets)
-            _basketRepository.Delete(basket);
-
+        _basketRepository.Delete(basket);
         _basketRepository.SaveAsync();
     }
 }

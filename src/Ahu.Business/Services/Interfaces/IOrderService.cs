@@ -7,6 +7,5 @@ public interface IOrderService
     Task<List<OrderGetDto>> GetAllOrdersAsync();
     Task<OrderGetDto> GetOrderByIdAsync(Guid id);
     Task<Guid> CreateOrderAsync(OrderPostDto orderPostDto);
-    //void Edit(OrderPutDto orderPutDto);
-    //void DeleteOrder(Guid id);
+    void DeleteOrder(Guid id);
 }

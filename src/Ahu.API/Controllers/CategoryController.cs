@@ -1,6 +1,7 @@
 ﻿using Ahu.Business.DTOs.CategoryDtos;
 using Ahu.Business.DTOs.CommonDtos;
 using Ahu.Business.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -31,9 +32,18 @@ public class CategoryController : ControllerBase
     }
 
     [HttpPost("")]
+    [Authorize(Roles = "Admin, Moderator")]
     public async Task<IActionResult> CreateCategory(CategoryPostDto categoryPostDto)
     {
         var result = await _categoryService.CreateCategoryAsync(categoryPostDto);
         return StatusCode((int)HttpStatusCode.Created, new ResponseDto(result, HttpStatusCode.Created,"Category successfully created"));
+    }
+
+    [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
+    public IActionResult Delete(Guid id)
+    {
+        _categoryService.DeleteCategory(id);
+        return NoContent();
     }
 }

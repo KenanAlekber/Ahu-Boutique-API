@@ -40,18 +40,10 @@ public class BasketItemsController : ControllerBase
         return StatusCode(201);
     }
 
-    //[HttpDelete("{id}")]
-    //public IActionResult Delete(Guid id)
-    //{
-    //    _basketService.DeleteBasket(id);
-    //    return NoContent();
-    //}
-
-    [HttpDelete("deleteAll")]
-    public async Task<IActionResult> Delete()
+    [HttpDelete("{id}")]
+    public IActionResult Delete(Guid id)
     {
-        AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
-        _basketService.DeleteAllBaskets(user.Id);
+        _basketService.DeleteBasket(id);
         return NoContent();
     }
 }

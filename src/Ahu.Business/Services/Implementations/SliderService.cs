@@ -77,4 +77,15 @@ public class SliderService : ISliderService
 
         return slider.Id;
     }
+
+    public void DeleteSlider(Guid id)
+    {
+        Slider slider = _sliderRepository.GetAll(x => true).FirstOrDefault(x => x.Id == id);
+
+        if (slider is null)
+            throw new RestException(System.Net.HttpStatusCode.NotFound, "Slider not found");
+
+        _sliderRepository.Delete(slider);
+        _sliderRepository.SaveAsync();
+    }
 }

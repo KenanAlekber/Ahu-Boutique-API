@@ -1,4 +1,5 @@
 ﻿using Ahu.Business.DTOs.BrandDtos;
+using Ahu.Business.Exceptions;
 using Ahu.Business.Exceptions.BrandExceptions;
 using Ahu.Business.Services.Interfaces;
 using Ahu.Core.Entities;
@@ -59,7 +60,17 @@ public class BrandService : IBrandService
 
         await _brandRepository.CreateAsync(brand);
         await _brandRepository.SaveAsync();
-
         return brand.Id;
+    }
+
+    public void DeleteBrand(Guid id)
+    {
+        Brand brand = _brandRepository.GetAll(x => true).FirstOrDefault(x => x.Id == id);
+
+        if (brand is null) 
+            throw new RestException(System.Net.HttpStatusCode.NotFound, "Brand not found");
+
+        _brandRepository.Delete(brand);
+        _brandRepository.SaveAsync();
     }
 }

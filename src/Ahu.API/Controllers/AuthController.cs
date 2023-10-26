@@ -34,7 +34,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet("UserData/{id}")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Get(string id)
     {
         AppUser user = await _userManager.FindByIdAsync(id);
@@ -56,7 +56,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> GetById(string id)
     {
         AppUser user = await _userManager.FindByIdAsync(id);
@@ -78,8 +78,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpGet("AllUsers")]
-    //[Authorize(Roles = "Admin")]
-    //[Authorize(AuthenticationSchemes = "Bearer")]
+    [Authorize(Roles = "Admin")]
     public IActionResult GetAllUsers()
     {
         var users = _userManager.Users;
@@ -155,7 +154,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPut("UserEdit/{id}")]
-    //[Authorize]
+    [Authorize]
     public async Task<IActionResult> Edit(UserPutDto userPutDto, string id)
     {
         AppUser user = await _userManager.FindByIdAsync(id);
@@ -178,7 +177,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPut("ChangePassword")]
-    //[Authorize]
+    [Authorize]
     public async Task<IActionResult> ChangePassword(ChangePasswordDto passwordDto, string id)
     {
         AppUser user = await _userManager.FindByIdAsync(id);

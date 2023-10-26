@@ -1,4 +1,5 @@
 ﻿using Ahu.Business.DTOs.CategoryDtos;
+using Ahu.Business.Exceptions;
 using Ahu.Business.Exceptions.BrandExceptions;
 using Ahu.Business.Exceptions.CategoryExceptions;
 using Ahu.Business.Services.Interfaces;
@@ -60,7 +61,17 @@ public class CategoryService : ICategoryService
 
         await _categoryRepository.CreateAsync(category);
         await _categoryRepository.SaveAsync();
-
         return category.Id;
+    }
+
+    public void DeleteCategory(Guid id)
+    {
+        Category category = _categoryRepository.GetAll(x => true).FirstOrDefault(x => x.Id == id);
+
+        if (category is null) 
+            throw new RestException(System.Net.HttpStatusCode.NotFound, "Category not found");
+
+        _categoryRepository.Delete(category);
+        _categoryRepository.SaveAsync();
     }
 }

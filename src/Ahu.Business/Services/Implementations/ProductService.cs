@@ -1,4 +1,5 @@
 ﻿using Ahu.Business.DTOs.ProductDtos;
+using Ahu.Business.Exceptions;
 using Ahu.Business.Exceptions.ProductExceptions;
 using Ahu.Business.Helpers;
 using Ahu.Business.Services.Interfaces;
@@ -98,7 +99,17 @@ public class ProductService : IProductService
 
         await _productImageRepository.CreateAsync(posterImg);
         await _productImageRepository.SaveAsync();
-
         return product.Id;
+    }
+
+    public void DeleteProduct(Guid id)
+    {
+        Product product = _productRepository.GetAll(x => true).FirstOrDefault(x => x.Id == id);
+
+        if (product is null)
+            throw new RestException(System.Net.HttpStatusCode.NotFound, "Product not found");
+
+        _productRepository.Delete(product);
+        _productRepository.SaveAsync();
     }
 }

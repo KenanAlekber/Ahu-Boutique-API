@@ -2,6 +2,7 @@
 using Ahu.Business.Services.Interfaces;
 using Ahu.Core.Entities.Identity;
 using Ahu.DataAccess.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,6 +26,7 @@ public class OrdersController : ControllerBase
     }
 
     [HttpPost("CreateOrder")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> CreateOrder([FromForm] OrderPostDto orderPostDto)
     {
         if (User.Identity.IsAuthenticated)
@@ -45,45 +47,24 @@ public class OrdersController : ControllerBase
     }
 
     [HttpGet("All")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, Moderator")]
     public async Task<IActionResult> GetAllOrders()
     {
         return Ok(await _orderService.GetAllOrdersAsync());
     }
 
     [HttpGet("{id}")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, Moderator")]
     public async Task<IActionResult> GetOrderByIdAsync(Guid id)
     {
         return Ok(await _orderService.GetOrderByIdAsync(id));
     }
 
-    //[HttpDelete("{id}")]
-    ////[Authorize(Roles = "Admin")]
-    //public IActionResult Delete(Guid id)
-    //{
-    //    _orderService.DeleteOrder(id);
-    //    return NoContent();
-    //}
-
-    //[HttpPut("Edit")]
-    //[Authorize(Roles = "Admin")]
-    //public IActionResult Edit(OrderPostDto orderPostDto)
-    //{
-
-    //    _orderService.ed(orderPostDto);
-
-    //    Order order = _orderRepository.Get(x => x.Id == putDto.Id);
-
-    //    if (orderPostDto.Status == OrderStatus.Accepted)
-    //    {
-    //        _emailSender.Send(order.Email, "Order Is Accepted!", $"Dear {order.FullName}  Your order has been confirmed. Our staff will contact you. Thank you for choosing us!");
-    //    }
-
-    //    if (orderPostDto.Status == OrderStatus.Rejected)
-    //    {
-    //        _emailSender.Send(order.Email, "Order Is Rejected!", $"Dear {order.FullName}  Your order has been rejected. Thank you for choosing us!");
-    //    }
-    //    return NoContent();
-    //}
+    [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
+    public IActionResult Delete(Guid id)
+    {
+        _orderService.DeleteOrder(id);
+        return NoContent();
+    }
 }

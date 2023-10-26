@@ -1,0 +1,17 @@
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\bin\Release\net6.0\Ahu.DataAccess.deps.json
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\bin\Release\net6.0\Ahu.DataAccess.runtimeconfig.json
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\bin\Release\net6.0\Ahu.DataAccess.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\bin\Release\net6.0\Ahu.DataAccess.pdb
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\bin\Release\net6.0\Ahu.Core.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\bin\Release\net6.0\Ahu.Core.pdb
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\obj\Release\net6.0\Ahu.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\obj\Release\net6.0\Ahu.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\obj\Release\net6.0\Ahu.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\obj\Release\net6.0\Ahu.DataAccess.AssemblyInfo.cs
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\obj\Release\net6.0\Ahu.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\obj\Release\net6.0\Ahu.DataAccess.csproj.CopyComplete
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\obj\Release\net6.0\Ahu.DataAccess.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\obj\Release\net6.0\refint\Ahu.DataAccess.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\obj\Release\net6.0\Ahu.DataAccess.pdb
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\obj\Release\net6.0\Ahu.DataAccess.genruntimeconfig.cache
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.DataAccess\obj\Release\net6.0\ref\Ahu.DataAccess.dll

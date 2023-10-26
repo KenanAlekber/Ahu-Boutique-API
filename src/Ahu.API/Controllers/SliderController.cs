@@ -1,6 +1,7 @@
 ﻿using Ahu.Business.DTOs.CommonDtos;
 using Ahu.Business.DTOs.SliderDtos;
 using Ahu.Business.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -31,10 +32,19 @@ namespace Ahu.API.Controllers
         }
 
         [HttpPost("")]
+        [Authorize(Roles = "Admin, Moderator")]
         public async Task<IActionResult> CreateSlider([FromForm] SliderPostDto sliderPostDto)
         {
             var result = await _sliderService.CreateSliderAsync(sliderPostDto);
             return StatusCode((int)HttpStatusCode.Created, new ResponseDto(result, HttpStatusCode.Created, "Slider successfully created"));
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
+        public IActionResult Delete(Guid id)
+        {
+            _sliderService.DeleteSlider(id);
+            return NoContent();
         }
     }
 }

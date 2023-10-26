@@ -17,7 +17,7 @@ public class StoreDatasController : ControllerBase
     }
 
     [HttpPost("")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> CreateStoreData([FromForm] StoreDataPostDto storeDataPostDto)
     {
         return StatusCode(201, await _dataService.CreateStoreData(storeDataPostDto));
@@ -30,7 +30,7 @@ public class StoreDatasController : ControllerBase
     }
 
     [HttpPut("Edit/{id}")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public IActionResult EditStoreData([FromForm] StoreDataPutDto storeDataPutDto)
     {
         _dataService.EditStoreData(storeDataPutDto);

@@ -1,0 +1,14 @@
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\bin\Release\net6.0\Ahu.Core.deps.json
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\bin\Release\net6.0\Ahu.Core.runtimeconfig.json
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\bin\Release\net6.0\Ahu.Core.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\bin\Release\net6.0\Ahu.Core.pdb
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Release\net6.0\Ahu.Core.csproj.AssemblyReference.cache
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Release\net6.0\Ahu.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Release\net6.0\Ahu.Core.AssemblyInfoInputs.cache
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Release\net6.0\Ahu.Core.AssemblyInfo.cs
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Release\net6.0\Ahu.Core.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Release\net6.0\Ahu.Core.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Release\net6.0\refint\Ahu.Core.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Release\net6.0\Ahu.Core.pdb
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Release\net6.0\Ahu.Core.genruntimeconfig.cache
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Core\obj\Release\net6.0\ref\Ahu.Core.dll

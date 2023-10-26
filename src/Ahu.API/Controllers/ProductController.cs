@@ -1,6 +1,7 @@
 ﻿using Ahu.Business.DTOs.CommonDtos;
 using Ahu.Business.DTOs.ProductDtos;
 using Ahu.Business.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -31,9 +32,18 @@ public class ProductController : ControllerBase
     }
 
     [HttpPost("")]
+    [Authorize(Roles = "Admin, Moderator")]
     public async Task<IActionResult> CreateProduct([FromForm] ProductPostDto productPostDto)
     {
         var result = await _productService.CreateProductAsync(productPostDto);
         return StatusCode((int)HttpStatusCode.Created, new ResponseDto(result, HttpStatusCode.Created, "Product successfully created"));
+    }
+
+    [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
+    public IActionResult Delete(Guid id)
+    {
+        _productService.DeleteProduct(id);
+        return NoContent();
     }
 }

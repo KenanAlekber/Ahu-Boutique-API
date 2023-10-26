@@ -35,7 +35,7 @@ builder.Services.AddAuthentication(option =>
     opt.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
     {
         ValidAudience = builder.Configuration["Security:Audience"],
-        ValidIssuer = builder.Configuration[""],
+        ValidIssuer = builder.Configuration["Security:Issuer"],
         IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Security:Secret"]))
     };
 });
@@ -87,7 +87,7 @@ app.UseStaticFiles();
 app.UseDefaultFiles();
 app.UseRouting();
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -96,7 +96,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.AddExcepitonHandler();
-
 
 app.UseAuthentication();
 app.UseAuthorization();

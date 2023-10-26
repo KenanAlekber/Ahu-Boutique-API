@@ -1,0 +1,17 @@
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\bin\Release\net6.0\Ahu.Business.deps.json
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\bin\Release\net6.0\Ahu.Business.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\bin\Release\net6.0\Ahu.Business.pdb
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\bin\Release\net6.0\Ahu.Core.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\bin\Release\net6.0\Ahu.DataAccess.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\bin\Release\net6.0\Ahu.DataAccess.pdb
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\bin\Release\net6.0\Ahu.Core.pdb
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\obj\Release\net6.0\Ahu.Business.csproj.AssemblyReference.cache
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\obj\Release\net6.0\Ahu.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\obj\Release\net6.0\Ahu.Business.AssemblyInfoInputs.cache
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\obj\Release\net6.0\Ahu.Business.AssemblyInfo.cs
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\obj\Release\net6.0\Ahu.Business.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\obj\Release\net6.0\Ahu.Business.csproj.CopyComplete
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\obj\Release\net6.0\Ahu.Business.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\obj\Release\net6.0\refint\Ahu.Business.dll
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\obj\Release\net6.0\Ahu.Business.pdb
+C:\Users\Dell\Desktop\CODE\FINAL-PROJECT\BackEnd\AhuBoutique\src\Ahu.Business\obj\Release\net6.0\ref\Ahu.Business.dll
