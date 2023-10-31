@@ -1,5 +1,21 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\0351191e-d2b2-4438-b74f-baffa7f95482sweatshirtfermuarli-oversize-sweatshir-7c5edc.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ahu.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ahu.API</BasePath>
+      <RelativePath>Uploads/Products/0351191e-d2b2-4438-b74f-baffa7f95482sweatshirtfermuarli-oversize-sweatshir-7c5edc.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\0351191e-d2b2-4438-b74f-baffa7f95482sweatshirtfermuarli-oversize-sweatshir-7c5edc.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\2912e135-5ffc-47bb-b851-b37afd859fd1download.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Ahu.API</SourceId>
@@ -32,6 +48,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\2b126d66-f377-4590-81ff-d21752bac2c8montici-kurklu-kot-mont-mavi-efe-46.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\5b97708b-cab6-4c96-a48f-1fdab9e83869pantolonpileli-palazzo-pantolon-tas-9f2091.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ahu.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ahu.API</BasePath>
+      <RelativePath>Uploads/Products/5b97708b-cab6-4c96-a48f-1fdab9e83869pantolonpileli-palazzo-pantolon-tas-9f2091.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\5b97708b-cab6-4c96-a48f-1fdab9e83869pantolonpileli-palazzo-pantolon-tas-9f2091.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\5d8db837-89bd-4361-84c6-b2b6f295ae36download (1).webp))">
       <SourceType>Package</SourceType>
       <SourceId>Ahu.API</SourceId>
@@ -47,6 +79,86 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\5d8db837-89bd-4361-84c6-b2b6f295ae36download (1).webp))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\5f046102-cb8e-4987-b8f5-25d4dda88751kabanoversize-trend-kaban-vizon-8c6-87.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ahu.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ahu.API</BasePath>
+      <RelativePath>Uploads/Products/5f046102-cb8e-4987-b8f5-25d4dda88751kabanoversize-trend-kaban-vizon-8c6-87.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\5f046102-cb8e-4987-b8f5-25d4dda88751kabanoversize-trend-kaban-vizon-8c6-87.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\604afe3e-e328-4ee0-9b27-51fb99467843elbisesifon-alice-elbise-siyah-ab9c2d.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ahu.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ahu.API</BasePath>
+      <RelativePath>Uploads/Products/604afe3e-e328-4ee0-9b27-51fb99467843elbisesifon-alice-elbise-siyah-ab9c2d.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\604afe3e-e328-4ee0-9b27-51fb99467843elbisesifon-alice-elbise-siyah-ab9c2d.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\6b57d0f5-c9d0-4796-9691-005a62a96f3akazakbalon-kol-kilcil-kazak-lila-659-ec.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ahu.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ahu.API</BasePath>
+      <RelativePath>Uploads/Products/6b57d0f5-c9d0-4796-9691-005a62a96f3akazakbalon-kol-kilcil-kazak-lila-659-ec.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\6b57d0f5-c9d0-4796-9691-005a62a96f3akazakbalon-kol-kilcil-kazak-lila-659-ec.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\7bad8295-7f01-4fb0-a575-82ca7851a785sweatshirtfermuarli-oversize-sweatshir-e40-9c.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ahu.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ahu.API</BasePath>
+      <RelativePath>Uploads/Products/7bad8295-7f01-4fb0-a575-82ca7851a785sweatshirtfermuarli-oversize-sweatshir-e40-9c.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\7bad8295-7f01-4fb0-a575-82ca7851a785sweatshirtfermuarli-oversize-sweatshir-e40-9c.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\88881dcd-5740-4f14-a038-91207117c573kabanoversize-trend-kaban-vizon-c-fc9f.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ahu.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ahu.API</BasePath>
+      <RelativePath>Uploads/Products/88881dcd-5740-4f14-a038-91207117c573kabanoversize-trend-kaban-vizon-c-fc9f.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\88881dcd-5740-4f14-a038-91207117c573kabanoversize-trend-kaban-vizon-c-fc9f.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\8b336879-f0d5-4cba-b926-2f98fb7af8c0trend.jpg))">
       <SourceType>Package</SourceType>
@@ -96,6 +208,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\9d4e44bd-38b7-440f-9803-82b2bfaad1a8ceketoversize-crop-buklet-ceket-siyah-953-8c.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\a1aac746-6585-47bc-8e2f-c1719ed144dfsorttuvit-sort-krem-b0-ff3.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ahu.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ahu.API</BasePath>
+      <RelativePath>Uploads/Products/a1aac746-6585-47bc-8e2f-c1719ed144dfsorttuvit-sort-krem-b0-ff3.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\a1aac746-6585-47bc-8e2f-c1719ed144dfsorttuvit-sort-krem-b0-ff3.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\a211db40-1c7c-4f6e-8ef8-e53e77e2e93delbisesifon-alice-elbise-siyah-8-29e3.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ahu.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ahu.API</BasePath>
+      <RelativePath>Uploads/Products/a211db40-1c7c-4f6e-8ef8-e53e77e2e93delbisesifon-alice-elbise-siyah-8-29e3.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\a211db40-1c7c-4f6e-8ef8-e53e77e2e93delbisesifon-alice-elbise-siyah-8-29e3.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\a4681538-8ecd-492f-9904-2f2aa9cd654cmontici-kurklu-kot-mont-mavi-e95ed8.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>Ahu.API</SourceId>
@@ -111,6 +255,54 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\a4681538-8ecd-492f-9904-2f2aa9cd654cmontici-kurklu-kot-mont-mavi-e95ed8.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\c3ac6a83-570f-4b9c-9964-93070a7ce281kazakbalon-kol-kilcil-kazak-lila--4833-.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ahu.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ahu.API</BasePath>
+      <RelativePath>Uploads/Products/c3ac6a83-570f-4b9c-9964-93070a7ce281kazakbalon-kol-kilcil-kazak-lila--4833-.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\c3ac6a83-570f-4b9c-9964-93070a7ce281kazakbalon-kol-kilcil-kazak-lila--4833-.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\e5bdc204-c9a7-4b0e-be9f-bed9eab69a44sorttuvit-sort-krem--b4ac-.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ahu.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ahu.API</BasePath>
+      <RelativePath>Uploads/Products/e5bdc204-c9a7-4b0e-be9f-bed9eab69a44sorttuvit-sort-krem--b4ac-.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\e5bdc204-c9a7-4b0e-be9f-bed9eab69a44sorttuvit-sort-krem--b4ac-.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\e8648286-7be3-4e38-95c7-7f093d218ef3pantolonpileli-palazzo-pantolon-tas-4-aca1.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Ahu.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Ahu.API</BasePath>
+      <RelativePath>Uploads/Products/e8648286-7be3-4e38-95c7-7f093d218ef3pantolonpileli-palazzo-pantolon-tas-4-aca1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\e8648286-7be3-4e38-95c7-7f093d218ef3pantolonpileli-palazzo-pantolon-tas-4-aca1.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Uploads\Products\f8518f96-ceb1-4841-b6bf-c7e9312fce9bear-oversized-shirts-4-2000-fcafe292784c44b896488ed6e7d97738.jpg))">
       <SourceType>Package</SourceType>

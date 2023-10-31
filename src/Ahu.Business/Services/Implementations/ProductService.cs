@@ -59,9 +59,9 @@ public class ProductService : IProductService
 
     public async Task<ProductGetDto> GetProductByIdAsync(Guid id)
     {
-        var product = await _productRepository.GetSingleAsync(c => c.Id == id, "Product");
+        var product = await _productRepository.GetSingleAsync(c => c.Id == id);
 
-        if (product == null)
+        if (product is null)
             throw new ProductNotFoundException($"Product is not found by id: {id}");
 
         var productDto = _mapper.Map<ProductGetDto>(product);
