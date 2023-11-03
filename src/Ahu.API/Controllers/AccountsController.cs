@@ -32,10 +32,10 @@ public class AccountsController : ControllerBase
 
         AppUser user = await _userManager.FindByNameAsync(userName);
 
-        if (user is null) 
+        if (user is null)
             return NotFound();
 
-        if (user.EmailConfirmed == true) 
+        if (user.EmailConfirmed == true)
             return Ok("Your Email Alredy Confirmed");
 
         var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -49,7 +49,7 @@ public class AccountsController : ControllerBase
         return Ok();
     }
 
-    [HttpPost("confirmemail")]
+    [HttpPost("ConfirmEmail")]
     [Authorize]
     public async Task<IActionResult> ConfirmEmail(ConfirmEmailDto confirmEmailDto)
     {
@@ -67,12 +67,12 @@ public class AccountsController : ControllerBase
         return Ok("Email confirmed successfully.");
     }
 
-    [HttpPost("forgotpassword")]
+    [HttpPost("ForgotPassword")]
     public async Task<IActionResult> ForgetPassword(ForgotPasswordDto passwordDto)
     {
         AppUser user = await _userManager.FindByEmailAsync(passwordDto.Email);
 
-        if (user is null || user.IsAdmin) 
+        if (user == null || user.IsAdmin)
             return BadRequest("Email is not correct");
 
         string token = await _userManager.GeneratePasswordResetTokenAsync(user);
@@ -85,7 +85,7 @@ public class AccountsController : ControllerBase
         return Ok();
     }
 
-    [HttpGet("resetpassword")]
+    [HttpGet("ResetPassword")]
     public async Task<IActionResult> ResetPassword([FromQuery] string encodedToken, [FromQuery] string email)
     {
         string token = _tokenEncDec.DecodeToken(encodedToken);
@@ -108,24 +108,24 @@ public class AccountsController : ControllerBase
         return BadRequest("error");
     }
 
-    //[HttpPost("ResetPasswordChange")]
-    //public async Task<IActionResult> ResetPassword(ResetPasswordPostDto resetPassword)
-    //{
-    //    string token = _tokenEncDec.DecodeToken(resetPassword.Token);
+    [HttpPost("ResetPasswordChange")]
+    public async Task<IActionResult> ResetPassword(ResetPasswordPostDto resetPassword)
+    {
+        string token = _tokenEncDec.DecodeToken(resetPassword.Token);
 
-    //    if (resetPassword.Password != resetPassword.ConfirmPassword) 
-    //        return BadRequest("Password is don't match");
+        if (resetPassword.Password != resetPassword.ConfirmPassword)
+            return BadRequest("Password is don't match");
 
-    //    var user = await _userManager.FindByEmailAsync(resetPassword.Email);
+        var user = await _userManager.FindByEmailAsync(resetPassword.Email);
 
-    //    if (user is null || user.IsAdmin)
-    //        return BadRequest("Email is not correct");
+        if (user is null || user.IsAdmin)
+            return BadRequest("Email is not correct");
 
-    //    var result = await _userManager.ResetPasswordAsync(user, token, resetPassword.Password);
+        var result = await _userManager.ResetPasswordAsync(user, token, resetPassword.Password);
 
-    //    if (!result.Succeeded)
-    //        return BadRequest("Password reset failed");
+        if (!result.Succeeded)
+            return BadRequest("Password reset failed");
 
-    //    return Ok("Password reset successful");
-    //}
+        return Ok("Password reset successful");
+    }
 }

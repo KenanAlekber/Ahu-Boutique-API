@@ -39,6 +39,15 @@ public class ProductController : ControllerBase
         return StatusCode((int)HttpStatusCode.Created, new ResponseDto(result, HttpStatusCode.Created, "Product successfully created"));
     }
 
+    [HttpPut("Edit")]
+    [Authorize(Roles = "Admin")]
+    public ActionResult Update([FromForm] ProductPutDto productPutDto)
+    {
+        _productService.Edit(productPutDto);
+
+        return NoContent();
+    }
+
     [HttpDelete("{id}")]
     [Authorize(Roles = "Admin")]
     public IActionResult Delete(Guid id)

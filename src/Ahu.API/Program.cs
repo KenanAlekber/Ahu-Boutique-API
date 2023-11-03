@@ -44,7 +44,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Universty TMS API",
+        Title = "AHU Boutique API",
         Version = "v1",
 
         Contact = new OpenApiContact
