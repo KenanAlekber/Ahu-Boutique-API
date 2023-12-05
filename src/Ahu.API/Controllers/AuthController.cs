@@ -46,8 +46,6 @@ public class AuthController : ControllerBase
         userGetDto.Id = user.Id;
         userGetDto.FullName = user.FullName;
         userGetDto.UserName = user.UserName;
-        userGetDto.Address = user.Address;
-        userGetDto.Phone = user.Phone;
         userGetDto.Email = user.Email;
         userGetDto.EmailConfirm = user.EmailConfirmed;
         userGetDto.IsAdmin = user.IsAdmin;
@@ -68,8 +66,6 @@ public class AuthController : ControllerBase
         userGetDto.Id = user.Id;
         userGetDto.FullName = user.FullName;
         userGetDto.UserName = user.UserName;
-        userGetDto.Address = user.Address;
-        userGetDto.Phone = user.Phone;
         userGetDto.Email = user.Email;
         userGetDto.EmailConfirm = user.EmailConfirmed;
         userGetDto.IsAdmin = user.IsAdmin;
@@ -95,8 +91,6 @@ public class AuthController : ControllerBase
                 Id = user.Id,
                 FullName = user.FullName,
                 UserName = user.UserName,
-                Address = user.Address,
-                Phone = user.Phone,
                 Email = user.Email,
                 IsAdmin = user.IsAdmin,
                 EmailConfirm = user.EmailConfirmed
@@ -122,8 +116,6 @@ public class AuthController : ControllerBase
             UserName = registerDto.Username,
             FullName = registerDto.Fullname,
             Email = registerDto.Email,
-            Address = registerDto.Address,
-            Phone = registerDto.Phone,
             IsAdmin = false
         };
 
@@ -162,8 +154,6 @@ public class AuthController : ControllerBase
         user.FullName = userPutDto.FullName;
         user.Email = userPutDto.Email;
         user.UserName = userPutDto.UserName;
-        user.Address = userPutDto.Address;
-        user.Phone = userPutDto.Phone;
 
         if (!await _userManager.CheckPasswordAsync(user, userPutDto.Password))
             return BadRequest("Password is not correct");

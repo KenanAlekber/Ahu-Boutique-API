@@ -1,10 +1,10 @@
-﻿using Ahu.Core.Entities.Common;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 
 namespace Ahu.Business.DTOs.ProductDtos;
 
-public class ProductPutDto : BaseEntity
+public class ProductPutDto
 {
+    public Guid Id { get; set; }
     public Guid CategoryId { get; set; }
     public Guid BrandId { get; set; }
     public int Rate { get; set; }

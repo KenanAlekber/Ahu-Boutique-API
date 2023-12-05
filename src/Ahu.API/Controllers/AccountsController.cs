@@ -1,4 +1,5 @@
-﻿using Ahu.Business.DTOs.UserDtos;
+﻿using Ahu.API.Services;
+using Ahu.Business.DTOs.UserDtos;
 using Ahu.Business.Helper;
 using Ahu.Business.Services.Interfaces;
 using Ahu.Core.Entities.Identity;
@@ -16,12 +17,14 @@ public class AccountsController : ControllerBase
     private readonly IEmailSender _emailSender;
     private readonly TokenEncoderDecoder _tokenEncDec;
     private readonly IConfiguration _configuration;
-    public AccountsController(UserManager<AppUser> userManager, IEmailSender emailSender, TokenEncoderDecoder tokenEncDec, IConfiguration configuration)
+    private readonly JwtService _jwtService;
+    public AccountsController(UserManager<AppUser> userManager, IEmailSender emailSender, TokenEncoderDecoder tokenEncDec, IConfiguration configuration, JwtService jwtService)
     {
         _userManager = userManager;
         _emailSender = emailSender;
         _tokenEncDec = tokenEncDec;
         _configuration = configuration;
+        _jwtService = jwtService;
     }
 
     [HttpGet("SendConfirmEmailToken")]
@@ -29,6 +32,7 @@ public class AccountsController : ControllerBase
     public async Task<IActionResult> CreateToken()
     {
         string userName = User.Identity.Name;
+        //string userName = await _userManager.FindByNameAsync(User.Identity.Name);
 
         AppUser user = await _userManager.FindByNameAsync(userName);
 
@@ -75,10 +79,13 @@ public class AccountsController : ControllerBase
         if (user == null || user.IsAdmin)
             return BadRequest("Email is not correct");
 
-        string token = await _userManager.GeneratePasswordResetTokenAsync(user);
+        var roles = await _userManager.GetRolesAsync(user);
+
+        string token = _jwtService.GenerateToken(user, roles);
 
         string encodedToken = _tokenEncDec.EncodeToken(token);
-        string resetPasswordUrl = $"{Request.Scheme}://{Request.Host}/api/accounts/resetpassword?encodedToken={encodedToken}&email={passwordDto.Email}";
+        //string resetPasswordUrl = $"{Request.Scheme}://{Request.Host}/api/accounts/resetpassword?encodedToken={encodedToken}&email={passwordDto.Email}";
+        string resetPasswordUrl = $"http://localhost:3000/resetpassword?encodedToken={encodedToken}&email={passwordDto.Email}";
 
         _emailSender.Send(passwordDto.Email, "Reset Password", $"Click <a href=\"{resetPasswordUrl}\">here</a> to reset your password");
 

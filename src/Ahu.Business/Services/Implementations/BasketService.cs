@@ -20,10 +20,33 @@ public class BasketService : IBasketService
 
     public List<BasketGetDto> GetAllBaskets(string userId)
     {
-        var baskets = _basketRepository.GetAll(b => b.UserId == userId.ToString());
-
+        var baskets = _basketRepository.GetAll(x => x.UserId == userId, "Product");
         return _mapper.Map<List<BasketGetDto>>(baskets);
     }
+
+    //public async Task<List<BasketGetDto>> GetAllBaskets(string userId)
+    //{
+    //    //List<BasketItem> baskets = _basketRepository.GetAll(b => b.UserId == userId.ToString(), "Product").ToList();
+    //    //var baskets = _basketRepository.GetAll(x => x.UserId == userId, "Product");
+
+
+    //    var baskets = await _basketRepository.GetAll(p => true).ToListAsync();
+
+    //    List<BasketGetDto> basketGetDtos = null;
+
+    //    try
+    //    {
+    //        basketGetDtos = _mapper.Map<List<BasketGetDto>>(baskets);
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        throw new Exception(ex.Message);
+    //    }
+
+    //    //return _mapper.Map<Task<List<BasketGetDto>>>(baskets);
+
+    //    return basketGetDtos;
+    //}
 
     public async void AddToBasket(BasketPostDto basketPostDto)
     {

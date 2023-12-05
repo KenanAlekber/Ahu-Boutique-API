@@ -1,3 +1,7 @@
 ﻿namespace Ahu.Business.DTOs.BasketItemDtos;
 
-public record BasketPostDto(Guid ProductId, Guid UserId);
+public class BasketPostDto
+{
+    public Guid ProductId { get; set; }
+    public Guid UserId { get; set; }
+}

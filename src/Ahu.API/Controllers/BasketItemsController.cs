@@ -20,7 +20,7 @@ public class BasketItemsController : ControllerBase
     }
 
     [HttpGet("all")]
-    public async Task<IActionResult> GetAllBaskets()
+    public async Task<IActionResult> GetAll()
     {
         AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
         return Ok(_basketService.GetAllBaskets(user.Id));
@@ -30,7 +30,7 @@ public class BasketItemsController : ControllerBase
     public IActionResult AddToBasket(BasketPostDto basketPostDto)
     {
         _basketService.AddToBasket(basketPostDto);
-        return StatusCode(201);
+        return StatusCode(201, "Add to basket completed successfully");
     }
 
     [HttpPost("reduce")]

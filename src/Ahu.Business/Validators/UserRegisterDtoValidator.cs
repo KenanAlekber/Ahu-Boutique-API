@@ -12,7 +12,5 @@ public class UserRegisterDtoValidator : AbstractValidator<UserRegisterDto>
         RuleFor(x => x.Password).NotEmpty().MinimumLength(6).MaximumLength(20);
         RuleFor(x => x.ConfirmPassword).Equal(x => x.Password).WithMessage("Passwords do not match");
         RuleFor(x => x.Email).NotEmpty().EmailAddress();
-        RuleFor(x => x.Address).MaximumLength(100);
-        RuleFor(x => x.Phone).NotEmpty().Matches(@"^(\+\d{1,3})?\s?\d{11,13}$").WithMessage("Please enter a valid phone number");
     }
 }

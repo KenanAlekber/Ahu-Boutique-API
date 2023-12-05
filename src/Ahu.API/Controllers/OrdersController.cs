@@ -26,7 +26,6 @@ public class OrdersController : ControllerBase
     }
 
     [HttpPost("CreateOrder")]
-    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> CreateOrder([FromForm] OrderPostDto orderPostDto)
     {
         if (User.Identity.IsAuthenticated)
@@ -39,8 +38,7 @@ public class OrdersController : ControllerBase
 
         var order = await _orderService.CreateOrderAsync(orderPostDto);
 
-        if (
-            order != null)
+        if (order != null)
             _emailSender.Send(orderPostDto.Email, "Order Is Pending...", $"Dear {orderPostDto.FullName} Your order is pending, you will be notified after it is confirmed by the admins. Thank you for choosing us!");
 
         return StatusCode(201, order);

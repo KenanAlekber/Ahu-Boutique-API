@@ -2,4 +2,11 @@
 
 namespace Ahu.Business.DTOs.BasketItemDtos;
 
-public record BasketGetDto(Guid Id, Guid ProductId, Guid UseId, int Count, Product Product);
+public class BasketGetDto
+{
+    public string Id { get; set; }
+    public string ProductId { get; set; }
+    public string UserId { get; set; }
+    public int Count { get; set; }
+    public Product Product { get; set; }
+}
