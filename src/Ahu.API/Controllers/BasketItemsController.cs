@@ -27,9 +27,9 @@ public class BasketItemsController : ControllerBase
     }
 
     [HttpPost("add")]
-    public IActionResult AddToBasket(BasketPostDto basketPostDto)
+    public async Task<IActionResult> AddToBasket(BasketPostDto basketPostDto)
     {
-        _basketService.AddToBasket(basketPostDto);
+        await _basketService.AddToBasket(basketPostDto);
         return StatusCode(201, "Add to basket completed successfully");
     }
 

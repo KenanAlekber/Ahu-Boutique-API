@@ -118,7 +118,7 @@ public class AccountsController : ControllerBase
     [HttpPost("ResetPasswordChange")]
     public async Task<IActionResult> ResetPassword(ResetPasswordPostDto resetPassword)
     {
-        string token = _tokenEncDec.DecodeToken(resetPassword.Token);
+        //string token = _tokenEncDec.DecodeToken(resetPassword.Token);
 
         if (resetPassword.Password != resetPassword.ConfirmPassword)
             return BadRequest("Password is don't match");
@@ -128,7 +128,9 @@ public class AccountsController : ControllerBase
         if (user is null || user.IsAdmin)
             return BadRequest("Email is not correct");
 
-        var result = await _userManager.ResetPasswordAsync(user, token, resetPassword.Password);
+       
+        var result = await _userManager.ResetPasswordAsync(user, resetPassword.Token, resetPassword.Password);
+        //var result = await _userManager.ResetPasswordAsync(,);
 
         if (!result.Succeeded)
             return BadRequest("Password reset failed");

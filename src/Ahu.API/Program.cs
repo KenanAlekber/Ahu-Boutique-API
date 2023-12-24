@@ -15,15 +15,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddCors(option =>
-//{
-//    option.AddPolicy("AllowAllOrigin", builder =>
-//    {
-//        builder.AllowAnyHeader();
-//        builder.AllowAnyMethod();
-//        builder.AllowAnyOrigin();
-//    });
-//});
+builder.Services.AddCors(option =>
+{
+    option.AddPolicy("AllowAllOrigin", builder =>
+    {
+        builder.AllowAnyHeader();
+        builder.AllowAnyMethod();
+        builder.AllowAnyOrigin();
+    });
+});
 
 builder.Services.AddAuthentication(option =>
 {
@@ -82,12 +82,7 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-//app.UseCors("AllowAllOrigin");
-
-app.UseCors(builder =>
-{
-    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-});
+app.UseCors("AllowAllOrigin");
 
 app.UseStaticFiles();
 app.UseDefaultFiles();

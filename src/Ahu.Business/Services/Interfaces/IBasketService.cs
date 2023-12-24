@@ -6,6 +6,6 @@ public interface IBasketService
 {
     List<BasketGetDto> GetAllBaskets(string userId);
     void ReduceBasketItem(BasketPostDto basketPostDto);
-    void AddToBasket(BasketPostDto basketPostDto);
+    Task AddToBasket(BasketPostDto basketPostDto);
     void DeleteBasket(Guid id);
 }

@@ -48,7 +48,7 @@ public class BasketService : IBasketService
     //    return basketGetDtos;
     //}
 
-    public async void AddToBasket(BasketPostDto basketPostDto)
+    public async Task AddToBasket(BasketPostDto basketPostDto)
     {
         BasketItem basket = await _basketRepository.GetSingleAsync(b => b.ProductId == basketPostDto.ProductId && b.UserId == basketPostDto.UserId.ToString());
 
